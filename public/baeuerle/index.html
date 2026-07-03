@@ -1,0 +1,1219 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bäuerle Gartengestaltung &amp; Außenanlagen GmbH · Garten- und Landschaftsbau in Bühlertal</title>
+<meta name="description" content="Garten- und Landschaftsbau aus Bühlertal: Gartengestaltung, Pflaster- und Wegebau, Natursteinmauern, Gabionen und Außenanlagen. 5,0 Sterne bei Google. Jetzt kostenloses Angebot anfragen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1917; --anthracite:#292524; --stone-700:#44403C; --stone-500:#78716C;
+  --stone-300:#D6D3D1; --stone-200:#E7E5E4; --stone-100:#F5F5F4; --bg:#FAFAF9; --white:#FFFFFF;
+  --green:#15803D; --green-700:#166534; --green-600:#16A34A; --green-50:#F0FDF4; --green-100:#DCFCE7;
+  --clay:#B45309; --danger:#DC2626;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  --r-sm:8px; --r-md:14px; --r-lg:22px; --r-pill:99px;
+  --shadow-sm:0 1px 2px rgba(28,25,23,.06),0 1px 3px rgba(28,25,23,.05);
+  --shadow-md:0 4px 12px rgba(28,25,23,.08),0 2px 4px rgba(28,25,23,.05);
+  --shadow-lg:0 18px 50px -12px rgba(28,25,23,.22);
+  --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+.reveal--left,.reveal--right{will-change:transform}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-700);background:var(--green-50);border:1px solid var(--green-100);padding:8px 15px;border-radius:var(--r-pill)}
+.eyebrow--dark{color:var(--green-600);background:rgba(22,163,74,.12);border-color:rgba(22,163,74,.35)}
+.btn{font-family:var(--font);font-size:16px;font-weight:700;letter-spacing:-.01em;border:none;border-radius:var(--r-pill);padding:15px 26px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .16s ease,background .18s ease,box-shadow .18s ease,border-color .18s ease;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--green);color:#fff;box-shadow:0 6px 20px rgba(21,128,61,.32);position:relative;overflow:hidden}
+.btn--primary::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-18deg);transition:left .6s cubic-bezier(.2,.7,.2,1)}
+.btn--primary:hover::after{left:140%}
+.btn--primary:hover{background:var(--green-700);box-shadow:0 10px 28px rgba(21,128,61,.42)}
+.btn--dark{background:var(--anthracite);color:#fff}
+.btn--dark:hover{background:var(--ink)}
+.btn--ghost{background:transparent;color:var(--ink);border:1.5px solid var(--stone-300)}
+.btn--ghost:hover{border-color:var(--ink);background:var(--stone-100)}
+.btn--ghost-light{background:rgba(255,255,255,.04);color:#fff;border:1.5px solid rgba(255,255,255,.28)}
+.btn--ghost-light:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+.sec{padding:96px 0}
+.sec__head{max-width:660px;margin-bottom:54px}
+.sec__head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec__title{font-size:clamp(28px,3.8vw,44px);font-weight:800;letter-spacing:-.032em;line-height:1.08;margin-top:16px}
+.sec__title em{font-style:normal;color:var(--green)}
+.sec__desc{margin-top:16px;font-size:17px;color:var(--stone-700)}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,.8,.3,1),transform .8s cubic-bezier(.16,.8,.3,1);will-change:opacity,transform}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.09s}
+.reveal[data-d="2"]{transition-delay:.18s}
+.reveal[data-d="3"]{transition-delay:.27s}
+.reveal--left{transform:translateX(-44px)}
+.reveal--right{transform:translateX(44px)}
+.reveal--scale{transform:scale(.92)}
+.reveal--left.in,.reveal--right.in,.reveal--scale.in{transform:none}
+
+/* scroll progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--green),var(--green-600));z-index:80;transition:width .1s linear}
+/* horizontale Reveals nur ab Desktop, darunter vertikal (vermeidet seitlichen Overflow) */
+@media (max-width:1024px){
+  .reveal--left,.reveal--right{transform:translateY(30px)}
+  .reveal--left.in,.reveal--right.in{transform:none}
+}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .25s ease,box-shadow .25s ease,border-color .25s ease;border-bottom:1px solid transparent;background:rgba(250,250,249,.82);backdrop-filter:saturate(160%) blur(12px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav__brand{display:flex;align-items:center;gap:12px}
+.nav__brand .bn{font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--ink);line-height:1;transition:color .25s ease}
+.nav__brand .bc{font-weight:600;font-size:9px;letter-spacing:.24em;color:var(--green-700);line-height:1;margin-top:3px}
+.nav__links{display:flex;gap:2px;align-items:center}
+.nav__links a{color:var(--stone-700);font-size:14.5px;font-weight:600;padding:9px 14px;border-radius:var(--r-pill);transition:background .18s ease,color .18s ease}
+.nav__links a:hover{background:var(--stone-100);color:var(--ink)}
+.nav__cta{background:var(--green);color:#fff;font-family:var(--font);font-weight:700;font-size:14.5px;border:none;border-radius:var(--r-pill);padding:11px 20px;cursor:pointer;margin-left:8px;display:inline-flex;align-items:center;gap:8px;transition:background .18s ease,transform .16s ease,box-shadow .18s ease;box-shadow:0 4px 14px rgba(21,128,61,.3)}
+.nav__cta:hover{background:var(--green-700)}
+.nav__cta:active{transform:scale(.97)}
+.nav__burger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:70}
+.nav__burger span{display:block;width:24px;height:2.4px;background:var(--ink);border-radius:2px;margin:5px 0;transition:.25s;transform-origin:center}
+/* scrolled state */
+.nav.scrolled{background:rgba(250,250,249,.94);backdrop-filter:saturate(160%) blur(12px);box-shadow:var(--shadow-sm);border-color:var(--stone-200)}
+.nav .sig-light{display:none}
+.nav .sig-dark{display:block}
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:65;background:var(--anthracite);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{color:#fff;font-size:24px;font-weight:700;letter-spacing:-.02em;padding:12px}
+.mobile-menu .btn{margin-top:18px}
+
+/* ---------- HERO (Personenmarke, hell) ---------- */
+.hero{position:relative;min-height:auto;display:flex;align-items:center;overflow:hidden;background:linear-gradient(170deg,#fff 0%,var(--green-50) 55%,#EAF7EE 100%)}
+.hero__glow{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none}
+.hero__glow--a{width:560px;height:560px;background:radial-gradient(circle,rgba(22,163,74,.16),transparent 70%);top:-200px;right:-120px;animation:drift1 20s ease-in-out infinite}
+.hero__glow--b{width:420px;height:420px;background:radial-gradient(circle,rgba(21,128,61,.1),transparent 70%);bottom:-160px;left:-60px;animation:drift2 24s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,50px) scale(1.1)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,-30px) scale(1.06)}}
+.hero__grid{position:relative;z-index:3;display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;width:100%;padding:122px 0 70px}
+.dot-pulse{width:8px;height:8px;border-radius:50%;background:var(--green);position:relative;display:inline-block}
+.dot-pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--green);animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.8);opacity:1}100%{transform:scale(2.4);opacity:0}}
+.hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:800;letter-spacing:-.035em;line-height:1.05;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero__h1-sub{font-size:clamp(20px,2.6vw,32px);font-weight:700;color:var(--stone-700);letter-spacing:-.02em}
+.hero__eyebrow{margin-bottom:24px}
+.hero__sub{margin-top:22px;font-size:clamp(16px,1.5vw,18px);color:var(--stone-700);max-width:50ch}
+.hero__cta{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.btn--ghost-light{background:var(--white);color:var(--ink);border:1.5px solid var(--stone-300)}
+.btn--ghost-light:hover{border-color:var(--green);background:var(--green-50);color:var(--green-700)}
+.hero__proof{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+.hero__stars{display:flex;align-items:center;gap:10px}
+.hero__stars-ic{color:#F59E0B;font-size:18px;letter-spacing:1px}
+.hero__stars-tx{font-size:14px;font-weight:600;color:var(--stone-700)}
+.hero__points{display:flex;gap:22px;flex-wrap:wrap}
+.hero__points span{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--ink)}
+
+.hero__media{position:relative;height:clamp(440px,52vw,580px)}
+.hero__blob{position:absolute;inset:0;background:linear-gradient(150deg,var(--green) 0%,var(--green-700) 100%);border-radius:42% 58% 56% 44%/52% 44% 56% 48%;animation:blobMorph 14s ease-in-out infinite;box-shadow:0 30px 80px -24px rgba(21,128,61,.5)}
+@keyframes blobMorph{0%,100%{border-radius:42% 58% 56% 44%/52% 44% 56% 48%}33%{border-radius:56% 44% 48% 52%/44% 56% 52% 48%}66%{border-radius:48% 52% 42% 58%/56% 48% 44% 52%}}
+.hero__photo{position:absolute;inset:14px;border-radius:42% 58% 56% 44%/52% 44% 56% 48%;overflow:hidden;animation:blobMorph 14s ease-in-out infinite}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero__chip{position:absolute;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.7);border-radius:var(--r-md);box-shadow:var(--shadow-lg);padding:14px 18px;z-index:4}
+.hero__chip--exp{top:6%;left:-6%;display:flex;flex-direction:column;animation:floatY 5s ease-in-out infinite}
+.hero__chip--exp strong{font-size:30px;font-weight:800;color:var(--green);letter-spacing:-.03em;line-height:1}
+.hero__chip--exp span{font-size:11px;font-weight:700;color:var(--stone-700);line-height:1.3;margin-top:3px}
+.hero__chip--owner{bottom:10%;left:-9%;display:flex;align-items:center;gap:11px;animation:floatY 6s ease-in-out .5s infinite}
+.hero__chip-av{width:42px;height:42px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--green-100)}
+.hero__chip-av img{width:100%;height:100%;object-fit:cover}
+.hero__chip--owner strong{display:block;font-size:14px;font-weight:800;color:var(--ink)}
+.hero__chip--owner span{font-size:11px;font-weight:600;color:var(--stone-500);line-height:1.3}
+.hero__chip--rating{top:16%;right:-5%;display:flex;flex-direction:column;gap:3px;animation:floatY 5.5s ease-in-out .3s infinite}
+.hero__chip-stars{color:#F59E0B;font-size:14px;letter-spacing:1px}
+.hero__chip-rtx{font-size:11px;font-weight:700;color:var(--stone-700);line-height:1.3}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ---------- TRUST BAR ---------- */
+.trustbar{background:var(--anthracite);padding:30px 0}
+.trustbar__row{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.trustbar__item{display:flex;align-items:center;gap:14px}
+.trustbar__item svg{flex-shrink:0;background:rgba(22,163,74,.12);padding:9px;border-radius:var(--r-sm);box-sizing:content-box;width:24px;height:24px}
+.trustbar__item strong{display:block;font-size:14.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
+.trustbar__item span{font-size:12.5px;color:#A8A29E;line-height:1.4}
+
+/* before/after (jetzt in eigener Sektion) */
+.ba{position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);user-select:none;touch-action:pan-y;border:1px solid var(--stone-200)}
+.ba__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba__before{position:absolute;inset:0;clip-path:inset(0 50% 0 0);z-index:2}
+.ba__tag{position:absolute;top:16px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:6px 13px;border-radius:var(--r-pill);backdrop-filter:blur(4px);z-index:4}
+.ba__tag--before{left:16px;background:rgba(28,25,23,.7)}
+.ba__tag--after{right:16px;background:rgba(21,128,61,.85)}
+.ba__handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.15);cursor:ew-resize;z-index:5}
+.ba__knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:ew-resize;color:var(--anthracite)}
+.ba__hint{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;color:#fff;background:rgba(28,25,23,.55);padding:7px 14px;border-radius:var(--r-pill);backdrop-filter:blur(4px);pointer-events:none;display:flex;align-items:center;gap:7px;transition:opacity .3s ease;z-index:4}
+.word{display:inline-block;opacity:0;transform:translateY(28px) rotate(2deg);animation:wordIn .7s cubic-bezier(.2,.8,.25,1) forwards}
+@keyframes wordIn{to{opacity:1;transform:none}}
+.scroll-ind{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:9px;color:var(--stone-500);text-decoration:none;opacity:0;animation:fadeUp 1s 1.1s forwards}
+.scroll-ind__mouse{width:26px;height:42px;border:2px solid var(--stone-300);border-radius:14px;display:flex;justify-content:center;padding-top:7px}
+.scroll-ind__dot{width:4px;height:8px;border-radius:4px;background:var(--green);animation:scrollDot 1.8s ease-in-out infinite}
+.scroll-ind__txt{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+@keyframes scrollDot{0%{opacity:0;transform:translateY(-4px)}40%{opacity:1}80%{opacity:0;transform:translateY(10px)}100%{opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+@keyframes rise{to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* ---------- LEISTUNGEN ---------- */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.serv{position:relative;background:var(--white);border:1px solid var(--stone-200);border-radius:var(--r-lg);padding:32px;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.serv:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--green-100)}
+.serv__ic{width:54px;height:54px;border-radius:var(--r-md);background:var(--green-50);border:1px solid var(--green-100);display:flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:22px;transition:transform .3s cubic-bezier(.2,.7,.2,1),background .3s ease}
+.serv:hover .serv__ic{transform:rotate(-6deg) scale(1.08);background:var(--green-100)}
+.serv__ic svg path,.serv__ic svg rect,.serv__ic svg circle{stroke-dasharray:var(--len,120);stroke-dashoffset:var(--len,120);transition:stroke-dashoffset 1.1s cubic-bezier(.45,.05,.2,1)}
+.serv.in .serv__ic svg path,.serv.in .serv__ic svg rect,.serv.in .serv__ic svg circle{stroke-dashoffset:0}
+.serv[data-d="1"].in .serv__ic svg *{transition-delay:.12s}
+.serv[data-d="2"].in .serv__ic svg *{transition-delay:.24s}
+.serv[data-d="3"].in .serv__ic svg *{transition-delay:.36s}
+.serv h3{font-size:21px;font-weight:700;letter-spacing:-.02em}
+.serv p{margin-top:10px;font-size:15.5px;color:var(--stone-700);line-height:1.6}
+.serv__link{margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:var(--green)}
+.serv__link svg{transition:transform .2s ease}
+.serv:hover .serv__link svg{transform:translateX(4px)}
+.serv__no{position:absolute;top:24px;right:28px;font-size:48px;font-weight:800;color:var(--stone-100);letter-spacing:-.04em;line-height:1;z-index:0}
+
+/* ---------- ÜBER UNS ---------- */
+.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.about__media{position:relative}
+.about__ph{aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--stone-200);position:relative}
+.about__ph img{width:100%;height:100%;object-fit:cover}
+
+
+.about__badge{position:absolute;bottom:-22px;left:-22px;background:var(--anthracite);color:#fff;border-radius:var(--r-lg);padding:22px 26px;box-shadow:var(--shadow-lg)}
+.about__badge strong{display:block;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--green-600)}
+.about__badge span{font-size:13px;color:#D6D3D1;font-weight:600;margin-top:4px;display:block}
+.about__cols{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin:26px 0 30px}
+.ab-item{display:flex;gap:11px;align-items:flex-start}
+.ab-item svg{flex-shrink:0;margin-top:2px;color:var(--green)}
+.ab-item span{font-size:15px;font-weight:600;color:var(--ink)}
+
+@media (max-width:920px){
+  .hero__grid{grid-template-columns:1fr;gap:36px;padding:100px 0 56px}
+  .hero__media{height:clamp(380px,90vw,460px);max-width:420px;margin:0 auto;width:100%}
+  .hero__chip--exp{left:0}
+  .hero__chip--owner{left:-2%}
+  .hero__chip--rating{right:0}
+  .nav__links,.nav__cta{display:none}
+  .nav__burger{display:block}
+  .serv-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:48px}
+  .about__cols{grid-template-columns:1fr}
+  .sec{padding:64px 0}
+  .trustbar__row{grid-template-columns:1fr 1fr;gap:20px}
+  
+  .ba{aspect-ratio:16/11}
+  
+  
+  
+  .gallery2{grid-template-columns:1fr 1fr;gap:14px}
+  .finalcta__box{grid-template-columns:1fr}
+  .finalcta__media{min-height:280px}
+  .finalcta__text{padding:36px 28px}
+  /* horizontale Reveals auf Mobile vertikal, sonst seitlicher Overflow */
+  .reveal--left,.reveal--right{transform:translateY(30px)}
+  .reveal--left.in,.reveal--right.in{transform:none}
+  /* Badge in den Rahmen holen */
+  .about__badge{left:16px;bottom:16px;padding:16px 20px}
+  .about__badge strong{font-size:30px}
+  
+  .platform{min-width:0;width:100%}
+}
+@media (max-width:520px){
+  .hero__trust{gap:24px}
+  .hero__cta{flex-direction:column;align-items:stretch}
+  .hero__cta .btn{justify-content:center;width:100%;white-space:normal}
+  .btn{font-size:15px;padding:14px 18px;white-space:normal;text-align:center}
+  .finalcta__btns{flex-direction:column;align-items:stretch}
+  .finalcta__btns .btn{justify-content:center}
+  .trustbar__row{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(30px,8vw,40px)}
+  .ba-layout__text .btn{width:100%;justify-content:center}
+}
+/* ---------- ABLAUF / STEPS ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:8px}
+.step{position:relative}
+.step__no{font-size:54px;font-weight:800;color:var(--green-600);letter-spacing:-.04em;line-height:1;opacity:.95}
+.step__line{position:absolute;top:26px;left:74px;right:-14px;height:2px;background:linear-gradient(90deg,rgba(22,163,74,.5),rgba(22,163,74,.05))}
+.step h3{font-size:19px;font-weight:700;color:#fff;margin-top:18px;letter-spacing:-.01em}
+.step p{font-size:14.5px;color:#A8A29E;margin-top:10px;line-height:1.6}
+
+/* ---------- STATS ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:54px 0;border-bottom:1px solid var(--stone-200)}
+.stat{text-align:center}
+.stat strong{display:block;font-size:clamp(34px,4.5vw,52px);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--stone-500);font-weight:600;margin-top:8px;display:block}
+
+/* ---------- GALLERY ---------- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gal{position:relative;aspect-ratio:1/1;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--stone-200);cursor:pointer}
+.gal--wide{grid-column:span 1;aspect-ratio:auto}
+.gal__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gal:hover .gal__img{transform:scale(1.07)}
+.gal__cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(transparent,rgba(28,25,23,.82));color:#fff;font-size:15px;font-weight:700;letter-spacing:-.01em;z-index:2;transform:translateY(6px);opacity:.92;transition:transform .25s ease,opacity .25s ease}
+.gal:hover .gal__cap{transform:none;opacity:1}
+
+/* ---------- REZENSIONEN ---------- */
+.platforms{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.platform{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid var(--stone-200);border-radius:var(--r-lg);padding:18px 24px;min-width:300px;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.platform:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--stone-300)}
+.platform__logo{width:48px;height:48px;border-radius:var(--r-md);background:var(--stone-100);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.platform__logo--mh{background:#FFD200;color:#1C1917;font-weight:800;font-size:17px;letter-spacing:-.5px}
+.platform__meta{flex:1}
+.platform__stars{display:flex;align-items:center;gap:3px}
+.platform__stars .pstar{width:16px;height:16px;display:inline-block;background:#F59E0B;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.8l6.9-.7z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.8l6.9-.7z'/%3E%3C/svg%3E") center/contain no-repeat}
+.platform__stars strong{margin-left:7px;font-size:17px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.platform__sub{font-size:13px;color:var(--stone-500);font-weight:600;margin-top:3px;display:block}
+.platform__arrow{color:var(--stone-500);flex-shrink:0;transition:transform .2s ease,color .2s ease}
+.platform:hover .platform__arrow{color:var(--green);transform:translate(2px,-2px)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--bg);border:1px solid var(--stone-200);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
+.rev:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.rev__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.rev__stars{color:#F59E0B;font-size:16px;letter-spacing:1px}
+.rev__src{font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:var(--r-pill)}
+.rev__src--g{background:#E8F0FE;color:#1A73E8}
+.rev__src--mh{background:#FFF8D6;color:#9A7B00}
+.rev p{font-size:15.5px;color:var(--stone-700);line-height:1.65;flex:1}
+.rev__by{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--stone-200)}
+.rev__av{width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0}
+.rev__by strong{display:block;font-size:15px;font-weight:700}
+.rev__by span{font-size:13px;color:var(--stone-500);font-weight:600}
+
+/* ---------- KONTAKT ---------- */
+.contact{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:start}
+.contact__list{list-style:none;margin:28px 0 26px;display:flex;flex-direction:column;gap:14px}
+.contact__list li{display:flex;align-items:center;gap:13px;font-size:15.5px;color:#E7E5E4;font-weight:500}
+.contact__list a{color:#E7E5E4}
+.contact__list a:hover{color:#fff}
+.contact__list .ci{width:38px;height:38px;border-radius:var(--r-sm);background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.32);display:flex;align-items:center;justify-content:center;color:var(--green-600);flex-shrink:0}
+.contact__assure{display:flex;flex-direction:column;gap:11px}
+.contact__assure div{display:flex;align-items:center;gap:10px;font-size:14.5px;color:#D6D3D1;font-weight:600}
+.contact__form{background:var(--white);border-radius:var(--r-lg);padding:34px;box-shadow:var(--shadow-lg)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label{font-size:13px;font-weight:700;color:var(--stone-700)}
+.field input,.field select,.field textarea{font-family:var(--font);font-size:15px;padding:12px 14px;border:1.5px solid var(--stone-300);border-radius:var(--r-sm);background:var(--white);color:var(--ink);transition:border-color .18s ease,box-shadow .18s ease;width:100%;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(21,128,61,.14)}
+.check{display:flex;align-items:flex-start;gap:10px;margin:4px 0 18px;font-size:13.5px;color:var(--stone-700);line-height:1.5;cursor:pointer}
+.check input{margin-top:3px;width:17px;height:17px;accent-color:var(--green);flex-shrink:0}
+.form-note{margin-top:14px;font-size:14px;font-weight:600;text-align:center;min-height:1px}
+.form-note.ok{color:var(--green-700)}
+.form-note.err{color:var(--danger)}
+
+/* ---------- FOOTER ---------- */
+.foot{background:var(--ink);color:#A8A29E;padding:64px 0 30px}
+.foot__top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot__brand p{font-size:14.5px;line-height:1.65;max-width:34ch}
+.foot__col h4{color:#fff;font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:16px;text-transform:uppercase}
+.foot__col a{display:block;font-size:14.5px;color:#A8A29E;padding:5px 0;transition:color .18s ease;line-height:1.5}
+.foot__col a:hover{color:var(--green-600)}
+.foot__bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;font-size:13px}
+.foot__legal{display:flex;gap:22px}
+.foot__legal a{color:#A8A29E;transition:color .18s ease}
+.foot__legal a:hover{color:#fff}
+
+@media (max-width:920px){
+  .steps{grid-template-columns:1fr 1fr;gap:32px 24px}
+  .step__line{display:none}
+  .stats{grid-template-columns:1fr 1fr;gap:36px 20px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr;gap:40px}
+  .foot__top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .contact__form{padding:24px}
+  .foot__top{grid-template-columns:1fr}
+  .foot__bottom{flex-direction:column;align-items:flex-start}
+}
+/* ---------- VORHER/NACHHER LAYOUT ---------- */
+
+
+
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq{background:var(--white);border:1px solid var(--stone-200);border-radius:var(--r-md);overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.faq[open]{border-color:var(--green-100);box-shadow:var(--shadow-sm)}
+.faq summary{padding:20px 24px;font-size:16.5px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s ease}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:22px;height:22px;flex-shrink:0;background:var(--green-50);border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 5v14M5 12h14' stroke='%2315803D' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");background-size:14px;background-position:center;background-repeat:no-repeat;transition:transform .25s ease}
+.faq[open] summary::after{transform:rotate(135deg)}
+.faq summary:hover{color:var(--green-700)}
+.faq__body{padding:0 24px 22px;font-size:15px;color:var(--stone-700);line-height:1.65}
+
+/* ---------- FINAL CTA ---------- */
+.finalcta{padding:0 0 96px;background:var(--bg)}
+.finalcta__box{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;background:var(--anthracite);border-radius:var(--r-lg);overflow:hidden;position:relative}
+.finalcta__media{position:relative;min-height:340px}
+.finalcta__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.finalcta__text{padding:48px 52px}
+.finalcta__text h2{font-size:clamp(26px,3.2vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:#fff;margin-top:16px}
+.finalcta__text h2 em{font-style:normal;color:var(--green-600)}
+.finalcta__text p{margin-top:14px;font-size:16px;color:#D6D3D1;line-height:1.6;max-width:52ch}
+.finalcta__btns{display:flex;gap:13px;margin-top:28px;flex-wrap:wrap}
+.finalcta .btn--ghost-light{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.28)}
+.finalcta .btn--ghost-light:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);color:#fff}
+
+/* ---------- PROZESS / SO ARBEITEN WIR ---------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- GALERIE 2 (echte Ergebnisse) ---------- */
+.gallery2{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gal2{position:relative;aspect-ratio:3/4;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--stone-200);margin:0}
+.gal2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gal2:hover img{transform:scale(1.06)}
+.gal2 figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 18px 16px;background:linear-gradient(transparent,rgba(28,25,23,.86));z-index:2;display:flex;flex-direction:column;gap:5px}
+.gal2__tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--green-600);background:rgba(22,163,74,.18);align-self:flex-start;padding:3px 9px;border-radius:var(--r-pill);backdrop-filter:blur(4px)}
+.gal2__cap{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1.3}
+
+/* ---------- SLIDER TABS ---------- */
+.ba{max-width:860px;margin:0 auto}
+.ba-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.ba-tab{font-family:var(--font);font-size:14.5px;font-weight:700;color:var(--stone-700);background:var(--white);border:1.5px solid var(--stone-300);border-radius:var(--r-pill);padding:10px 20px;cursor:pointer;transition:all .18s ease}
+.ba-tab:hover{border-color:var(--green);color:var(--green-700)}
+.ba-tab.is-active{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 14px rgba(21,128,61,.28)}
+.ba-cta{text-align:center;margin-top:28px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero__eyebrow,.hero h1,.hero__sub,.hero__cta,.hero__trust,.ba{opacity:1;transform:none}
+  .hero__video{transform:none!important}
+  .progress{display:none}
+  .word{opacity:1;transform:none}
+  .scroll-ind{opacity:1}
+  .serv__ic svg path,.serv__ic svg rect,.serv__ic svg circle{stroke-dashoffset:0}
+}</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="nav__brand" aria-label="Bäuerle Gartengestaltung und Außenanlagen GmbH – Startseite">
+      <img src="bilder/logo.png" alt="Bäuerle Gartengestaltung und Außenanlagen GmbH" style="height:48px;width:auto;display:block">
+    </a>
+    <div class="nav__links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#einblicke">Einblicke</a>
+      <a href="#rezensionen">Rezensionen</a>
+      <a href="#kontakt" class="nav__cta">Angebot einholen
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#leistungen">Leistungen</a>
+  <a href="#ueber">Über uns</a>
+  <a href="#ablauf">Ablauf</a>
+  <a href="#projekte">Projekte</a>
+  <a href="#einblicke">Einblicke</a>
+  <a href="#rezensionen">Rezensionen</a>
+  <a href="#kontakt" class="btn btn--primary">Angebot einholen</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero__glow hero__glow--a"></div>
+  <div class="hero__glow hero__glow--b"></div>
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow hero__eyebrow">
+          <span class="dot-pulse"></span>
+          Garten- &amp; Landschaftsbau · Bühlertal
+        </span>
+        <h1 aria-label="Ihr Außenbereich. Neu gestaltet. Von Bäuerle aus Bühlertal.">
+          <span class="word" style="animation-delay:.10s">Ihr</span> <span class="word" style="animation-delay:.17s">Außenbereich.</span><br>
+          <em><span class="word" style="animation-delay:.27s">Neu</span> <span class="word" style="animation-delay:.34s">gestaltet.</span></em><br>
+          <span class="word hero__h1-sub" style="animation-delay:.46s">Von Bäuerle aus Bühlertal.</span>
+        </h1>
+        <p class="hero__sub">Gartengestaltung, Pflaster, Natursteinmauern und Außenanlagen, alles aus einer Hand. Persönlich, sauber und termintreu, von Oliver Bäuerle und seinem Team im Raum Bühl und Baden-Baden.</p>
+        <div class="hero__cta">
+          <a href="#kontakt" class="btn btn--primary">Kostenloses Angebot anfragen
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="tel:+4972237759" class="btn btn--ghost-light">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+            Direkt anrufen
+          </a>
+        </div>
+        <div class="hero__proof">
+          <div class="hero__stars">
+            <span class="hero__stars-ic">★★★★★</span>
+            <span class="hero__stars-tx">5,0 bei Google · 30 Bewertungen aus der Region</span>
+          </div>
+          <div class="hero__points">
+            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="var(--green-600)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kostenlose Erstberatung</span>
+            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="var(--green-600)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Transparente Festpreise</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <div class="hero__blob"></div>
+        <div class="hero__photo">
+          <img src="bilder/g-04.jpg" alt="Von Bäuerle gestaltete Natursteinterrasse mit Sitzplatz und Blick über die Hügel bei Bühlertal" fetchpriority="high">
+        </div>
+        <div class="hero__chip hero__chip--exp">
+          <strong>5,0</strong>
+          <span>★ Google-<br>Bewertung</span>
+        </div>
+        <div class="hero__chip hero__chip--owner">
+          <div class="hero__chip-av" style="background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;letter-spacing:.02em">OB</div>
+          <div>
+            <strong>Oliver Bäuerle</strong>
+            <span>Ihr persönlicher<br>Ansprechpartner</span>
+          </div>
+        </div>
+        <div class="hero__chip hero__chip--rating">
+          <span class="hero__chip-stars">★★★★★</span>
+          <span class="hero__chip-rtx">30 zufriedene Kunden<br>in der Region</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#leistungen" class="scroll-ind" aria-label="Weiterscrollen">
+    <span class="scroll-ind__mouse"><span class="scroll-ind__dot"></span></span>
+    <span class="scroll-ind__txt">Entdecken</span>
+  </a>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<section class="trustbar">
+  <div class="wrap">
+    <div class="trustbar__row">
+      <div class="trustbar__item reveal" data-d="0">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 7.8 8 10 4.6-2.2 8-5 8-10V6l-8-4Z" stroke="var(--green)" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Top bewertet</strong><span>5,0 ★ bei Google · 30 Bewertungen</span></div>
+      </div>
+      <div class="trustbar__item reveal" data-d="1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.4" stroke="var(--green)" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.4" stroke="var(--green)" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.4" stroke="var(--green)" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.4" stroke="var(--green)" stroke-width="1.8"/></svg>
+        <div><strong>Alles aus einer Hand</strong><span>Planung, Bau und Pflege aus einem Betrieb</span></div>
+      </div>
+      <div class="trustbar__item reveal" data-d="2">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11Z" stroke="var(--green)" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="var(--green)" stroke-width="1.8"/></svg>
+        <div><strong>Region Bühl &amp; Baden</strong><span>Bühlertal, Bühl, Baden-Baden, Ortenau</span></div>
+      </div>
+      <div class="trustbar__item reveal" data-d="3">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M5 9l7-7 7 7" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Persönlich &amp; fair</strong><span>Ehrliche Beratung, transparente Preise</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN ===== -->
+<section class="sec" id="leistungen" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec__head center reveal">
+      <span class="eyebrow">Unsere Leistungen</span>
+      <h2 class="sec__title">Alles für Ihren <em>Außenbereich</em></h2>
+      <p class="sec__desc">Von der grünen Gartenanlage bis zur befestigten Einfahrt: vier Gewerke, ein Ansprechpartner, ein Ergebnis, das sich sehen lässt.</p>
+    </div>
+    <div class="serv-grid">
+
+      <div class="serv reveal reveal--scale" data-d="0">
+        <span class="serv__no">01</span>
+        <div class="serv__ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 22c0-6 0-9 0-9m0 0c0-3 2.5-5.5 5.5-5.5C17.5 11 15 13.5 12 13.5Zm0 0C12 10.5 9.5 8 6.5 8 6.5 11.5 9 13.5 12 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Garten- &amp; Landschaftsbau</h3>
+        <p>Neuanlage und Umgestaltung von Gärten: Rollrasen, Bepflanzung, Hecken und Beete. Wir gestalten Ihre grüne Wohlfühloase im Freien.</p>
+        <a href="#kontakt" class="serv__link">Angebot anfragen <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="serv reveal reveal--scale" data-d="1">
+        <span class="serv__no">02</span>
+        <div class="serv__ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.8"/></svg>
+        </div>
+        <h3>Pflaster- &amp; Wegebau</h3>
+        <p>Einfahrten, Höfe, Terrassen und Wege in Naturstein oder Betonstein, inklusive fachgerechter Entwässerung und sauberer Randabschlüsse.</p>
+        <a href="#kontakt" class="serv__link">Angebot anfragen <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="serv reveal reveal--scale" data-d="2">
+        <span class="serv__no">03</span>
+        <div class="serv__ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-4 8 4v13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12h16M4 16h16M9 8v13M15 8v13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Mauern &amp; Sichtschutz</h3>
+        <p>Naturstein- und Trockenmauern, Gabionen sowie Zäune und Holz-Sichtschutz nach Maß, dekorativ, standfest und langlebig.</p>
+        <a href="#kontakt" class="serv__link">Angebot anfragen <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="serv reveal reveal--scale" data-d="3">
+        <span class="serv__no">04</span>
+        <div class="serv__ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 4l6 6-9 9H5v-6l9-9Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Pflege &amp; Instandhaltung</h3>
+        <p>Heckenschnitt, Gartenpflege und Sanierung bestehender Anlagen, damit Ihr Außenbereich dauerhaft gepflegt und in Form bleibt.</p>
+        <a href="#kontakt" class="serv__link">Angebot anfragen <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÜBER UNS ===== -->
+<section class="sec" id="ueber" style="background:var(--white)">
+  <div class="wrap">
+    <div class="about">
+      <div class="about__media reveal reveal--left">
+        <div class="about__ph"><img src="bilder/g-03.jpg" alt="Betriebsgebäude der Bäuerle Gartengestaltung und Außenanlagen GmbH in Bühlertal" loading="lazy"></div>
+        <div class="about__badge">
+          <strong>5,0 ★</strong>
+          <span>30 Bewertungen<br>bei Google</span>
+        </div>
+      </div>
+      <div class="about__copy reveal reveal--right" data-d="1">
+        <span class="eyebrow">Schön, dass Sie uns gefunden haben</span>
+        <h2 class="sec__title" style="margin-top:16px">Ihr Meisterbetrieb <em>rund um den Garten</em></h2>
+        <p class="sec__desc">Die Bäuerle Gartengestaltung und Außenanlagen GmbH plant, baut und pflegt Außenanlagen für private und gewerbliche Kunden im Raum Bühl, Bühlertal und Baden-Baden. Ob Neuanlage, Umgestaltung oder laufende Pflege: Wir liefern maßgeschneiderte Lösungen, sauber ausgeführt und mit ehrlicher Beratung von Oliver Bäuerle und seinem Team.</p>
+        <div class="about__cols">
+          <div class="ab-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Gestaltung aus einer Hand</span></div>
+          <div class="ab-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Maßgeschneiderte Lösungen</span></div>
+          <div class="ab-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Faire, transparente Preise</span></div>
+          <div class="ab-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Erfahrenes, festes Team</span></div>
+          <div class="ab-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pünktlich &amp; zuverlässig</span></div>
+          <div class="ab-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Privat- &amp; Gewerbekunden</span></div>
+        </div>
+        <a href="#kontakt" class="btn btn--dark">Jetzt Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section class="sec" id="ablauf" style="background:var(--anthracite);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(80% 80% at 85% 10%,rgba(21,128,61,.16),transparent 55%);z-index:0"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="sec__head center reveal">
+      <span class="eyebrow eyebrow--dark">Wie sieht die Zusammenarbeit aus?</span>
+      <h2 class="sec__title" style="color:#fff">Ihr Weg zum <em style="color:var(--green-600)">perfekten Garten</em></h2>
+      <p class="sec__desc" style="color:#D6D3D1">In vier klaren Schritten vom ersten Gespräch bis zur Abnahme. Transparent, planbar, ohne böse Überraschungen.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-d="0">
+        <div class="step__no">01</div>
+        <div class="step__line"></div>
+        <h3>Beratung vor Ort</h3>
+        <p>Im kostenlosen Erstgespräch schauen wir uns Ihre Fläche an und besprechen Ihre Wünsche. Daraus entsteht ein individuelles Konzept.</p>
+      </div>
+      <div class="step reveal" data-d="1">
+        <div class="step__no">02</div>
+        <div class="step__line"></div>
+        <h3>Angebot &amp; Festpreis</h3>
+        <p>Sie erhalten ein transparentes Angebot mit allen Leistungen. Passt alles, vereinbaren wir den Starttermin.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <div class="step__no">03</div>
+        <div class="step__line"></div>
+        <h3>Umsetzung durch unser Team</h3>
+        <p>Unser erfahrenes Team setzt Ihr Projekt fachgerecht um, von der Bodenvorbereitung bis zum letzten Pflasterstein.</p>
+      </div>
+      <div class="step reveal" data-d="3">
+        <div class="step__no">04</div>
+        <h3>Übergabe &amp; Pflege</h3>
+        <p>Zum Abschluss eine saubere Übergabe mit Abnahme. Auf Wunsch übernehmen wir auch die langfristige Pflege.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:48px">
+      <a href="#kontakt" class="btn btn--primary">Jetzt kostenloses Erstgespräch sichern
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section style="background:var(--white);padding:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal" data-d="0"><strong>5,0</strong><span>Ø Google-Bewertung</span></div>
+      <div class="stat reveal" data-d="1"><strong data-count="30" data-suffix="">0</strong><span>Google-Rezensionen</span></div>
+      <div class="stat reveal" data-d="2"><strong data-count="100" data-suffix="%">0</strong><span>5-Sterne-Bewertungen</span></div>
+      <div class="stat reveal" data-d="3"><strong>0 €</strong><span>Erstberatung &amp; Angebot</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJEKTE / ERGEBNISSE ===== -->
+<section class="sec" id="projekte" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec__head center reveal">
+      <span class="eyebrow">Unsere Projekte</span>
+      <h2 class="sec__title">Ergebnisse, die <em>überzeugen</em></h2>
+      <p class="sec__desc">Ein Auszug aus echten Aufträgen in der Region, von der Gartenanlage über Pflasterarbeiten bis zu Natursteinmauern und Gabionen. Alles selbst umgesetzt.</p>
+    </div>
+    <div class="gallery2">
+      <figure class="gal2 reveal" data-d="0">
+        <img src="bilder/g-02.jpg" alt="Neu angelegte Einfahrt mit Pflasterweg und Rasen" loading="lazy">
+        <figcaption><span class="gal2__tag">Pflaster &amp; Garten</span><span class="gal2__cap">Einfahrt, Weg und Rasen neu angelegt</span></figcaption>
+      </figure>
+      <figure class="gal2 reveal" data-d="1">
+        <img src="bilder/g-07.jpg" alt="Natursteinmauer mit Rasen und Beet" loading="lazy">
+        <figcaption><span class="gal2__tag">Naturstein</span><span class="gal2__cap">Trockenmauer mit Rasen und Beet</span></figcaption>
+      </figure>
+      <figure class="gal2 reveal" data-d="2">
+        <img src="bilder/g-08.jpg" alt="Gabionen kombiniert mit Holz-Sichtschutzzaun" loading="lazy">
+        <figcaption><span class="gal2__tag">Sichtschutz</span><span class="gal2__cap">Gabionen und Holzzaun kombiniert</span></figcaption>
+      </figure>
+      <figure class="gal2 reveal" data-d="0">
+        <img src="bilder/g-09.jpg" alt="Verlegte Naturstein-Polygonalplatten als Weg" loading="lazy">
+        <figcaption><span class="gal2__tag">Wegebau</span><span class="gal2__cap">Naturstein-Polygonalplatten verlegt</span></figcaption>
+      </figure>
+      <figure class="gal2 reveal" data-d="1">
+        <img src="bilder/g-06.jpg" alt="Moderner Steingarten mit Stelen und Kiesbeet" loading="lazy">
+        <figcaption><span class="gal2__tag">Steingarten</span><span class="gal2__cap">Moderne Gestaltung mit Stelen</span></figcaption>
+      </figure>
+      <figure class="gal2 reveal" data-d="2">
+        <img src="bilder/g-10.jpg" alt="Neu befestigte Außenfläche mit Blick über die Landschaft" loading="lazy">
+        <figcaption><span class="gal2__tag">Außenanlage</span><span class="gal2__cap">Befestigte Fläche mit Panoramablick</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EINBLICKE / INSTAGRAM ===== -->
+<section class="sec" id="einblicke" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec__head center reveal">
+      <span class="eyebrow">Einblicke</span>
+      <h2 class="sec__title">Direkt von der <em>Baustelle</em></h2>
+      <p class="sec__desc">Laufende Projekte, Momente aus dem Alltag und fertige Ergebnisse, festgehalten auf unserem Instagram-Kanal. Ein echter Blick hinter die Kulissen.</p>
+    </div>
+    <div class="gallery">
+      <a class="gal reveal" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-30.jpg" alt="Neu gestaltete Außenanlage mit Blick über die Landschaft" loading="lazy">
+        <span class="gal__cap">Neugestaltung Außenanlage</span>
+      </a>
+      <a class="gal reveal" data-d="1" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-18.jpg" alt="Gestaltung rund um einen Pool" loading="lazy">
+        <span class="gal__cap">Poolumrandung</span>
+      </a>
+      <a class="gal reveal" data-d="2" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-10.jpg" alt="Frische Belags- und Pflasterarbeiten am Haus" loading="lazy">
+        <span class="gal__cap">Belagsarbeiten</span>
+      </a>
+      <a class="gal reveal" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-24.jpg" alt="Neu gepflasterte Park- und Stellflächen" loading="lazy">
+        <span class="gal__cap">Pflaster- &amp; Parkflächen</span>
+      </a>
+      <a class="gal reveal" data-d="1" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-16.jpg" alt="Erdarbeiten mit dem Minibagger" loading="lazy">
+        <span class="gal__cap">Erdarbeiten mit eigenem Gerät</span>
+      </a>
+      <a class="gal reveal" data-d="2" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-07.jpg" alt="Form- und Pflegeschnitt an einer Hecke" loading="lazy">
+        <span class="gal__cap">Form- &amp; Pflegeschnitt</span>
+      </a>
+      <a class="gal reveal" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-12.jpg" alt="Untergrund wird vorbereitet und planiert" loading="lazy">
+        <span class="gal__cap">Untergrund vorbereiten</span>
+      </a>
+      <a class="gal reveal" data-d="1" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-20.jpg" alt="Fertige Belags- und Mauerarbeiten" loading="lazy">
+        <span class="gal__cap">Belags- &amp; Mauerarbeiten</span>
+      </a>
+      <a class="gal reveal" data-d="2" href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">
+        <img class="gal__img" src="bilder/ig-02.jpg" alt="Bäuerle Firmenfahrzeug im Einsatz" loading="lazy">
+        <span class="gal__cap">Unser Team unterwegs</span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:38px" class="reveal">
+      <a href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener" class="btn btn--dark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+        Auf Instagram folgen · @baeuerle_gartengestaltung
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REZENSIONEN ===== -->
+<section class="sec" id="rezensionen" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec__head center reveal">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2 class="sec__title">5,0 Sterne bei <em>Google</em></h2>
+      <p class="sec__desc">30 Kundinnen und Kunden aus der Region haben Bäuerle mit der Höchstnote bewertet. Eine Auswahl echter Google-Rezensionen.</p>
+    </div>
+
+    <div class="platforms reveal" data-d="1">
+      <a href="https://maps.google.com/?cid=2521467208484716984" class="platform" target="_blank" rel="noopener" aria-label="Bäuerle auf Google ansehen">
+        <div class="platform__logo">
+          <svg width="30" height="30" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.7-2 5-4.4 6.6v5.5h7.1c4.1-3.8 6.6-9.4 6.6-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.4l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9h-7.3v5.7C5.7 41 14.2 46 24 46z"/><path fill="#FBBC05" d="M11.8 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.5C3 17.2 2.1 20.5 2.1 24s.9 6.8 2.4 9.9l7.3-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.1 29.9 2 24 2 14.2 2 5.7 7 4.5 14.1l7.3 5.7c1.7-5.2 6.5-9 12.2-9z"/></svg>
+        </div>
+        <div class="platform__meta">
+          <div class="platform__stars">
+            <span class="pstar"></span><span class="pstar"></span><span class="pstar"></span><span class="pstar"></span><span class="pstar"></span>
+            <strong>5,0</strong>
+          </div>
+          <span class="platform__sub">Google Rezensionen · 30 Bewertungen</span>
+        </div>
+        <svg class="platform__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal reveal--scale" data-d="0">
+        <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__src rev__src--g">Google</span></div>
+        <p>„Wir waren mit der Firma Bäuerle super zufrieden. Die Beratung war genau auf unsere Vorstellungen zugeschnitten, Kommunikation und Service waren hervorragend.“</p>
+        <div class="rev__by"><div class="rev__av">M</div><div><strong>Marion Wolfgarten</strong><span>Gartengestaltung</span></div></div>
+      </div>
+      <div class="rev reveal reveal--scale" data-d="1">
+        <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__src rev__src--g">Google</span></div>
+        <p>„Fa. Bäuerle hat uns einen besonderen Rückzugsort im Garten geschaffen: Gabionenmauer, Natursteinwand, Rollrasen und Keramikplatten. Absolut empfehlenswert.“</p>
+        <div class="rev__by"><div class="rev__av">P</div><div><strong>Philipp</strong><span>Gabionen &amp; Rollrasen</span></div></div>
+      </div>
+      <div class="rev reveal reveal--scale" data-d="2">
+        <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__src rev__src--g">Google</span></div>
+        <p>„Wir haben unseren Garten neu gestalten lassen, absolute Profiarbeit, ein super freundliches Team und Preis-Leistung stimmt. Jederzeit wieder.“</p>
+        <div class="rev__by"><div class="rev__av">M</div><div><strong>Martin Röckel</strong><span>Gartenneugestaltung</span></div></div>
+      </div>
+      <div class="rev reveal reveal--scale" data-d="0">
+        <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__src rev__src--g">Google</span></div>
+        <p>„Die Firma Bäuerle hat bei mir den Hof neu gepflastert, die Entwässerung erneuert und den Hang mit Stelen gegen nachrutschende Erde abgesichert. Sehr gute Arbeit.“</p>
+        <div class="rev__by"><div class="rev__av">S</div><div><strong>S. G.</strong><span>Pflaster &amp; Entwässerung</span></div></div>
+      </div>
+      <div class="rev reveal reveal--scale" data-d="1">
+        <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__src rev__src--g">Google</span></div>
+        <p>„Die alte Thujahecke wurde entfernt und durch eine Ligusterhecke ersetzt. Die neue Hecke ist wirklich schön geworden, auch die Nachbarn sind begeistert.“</p>
+        <div class="rev__by"><div class="rev__av">V</div><div><strong>Valia</strong><span>Heckenpflanzung</span></div></div>
+      </div>
+      <div class="rev reveal reveal--scale" data-d="2">
+        <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__src rev__src--g">Google</span></div>
+        <p>„Herzlichen Dank für die zeitnahe und perfekte Ausführung der Pflasterarbeiten und des Rollrasens. Von Anfang an bestens beraten.“</p>
+        <div class="rev__by"><div class="rev__av">B</div><div><strong>Barbara S.</strong><span>Pflaster &amp; Rollrasen</span></div></div>
+      </div>
+    </div>
+    <p class="rev-note" style="text-align:center;margin-top:28px;font-size:13px;color:var(--stone-500)">Echte Google-Rezensionen der Bäuerle Gartengestaltung und Außenanlagen GmbH (Auszug).</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec__head center reveal">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2 class="sec__title">Gut zu <em>wissen</em></h2>
+      <p class="sec__desc">Die wichtigsten Fragen, bevor wir loslegen. Ist Ihre Frage nicht dabei? Rufen Sie einfach an.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq reveal" data-d="0">
+        <summary>Was kostet ein Projekt und wie läuft die Abrechnung?</summary>
+        <div class="faq__body">Sie erhalten vorab ein transparentes Angebot mit allen Leistungen, in der Regel als Festpreis. Keine versteckten Kosten. Die Erstberatung vor Ort ist kostenlos und unverbindlich.</div>
+      </details>
+      <details class="faq reveal" data-d="0">
+        <summary>Wie schnell bekomme ich einen Termin?</summary>
+        <div class="faq__body">Wir melden uns zeitnah auf Ihre Anfrage und stimmen einen Termin für die Besichtigung ab. Da wir aus der Region kommen, sind die Wege kurz und Termine oft schnell möglich.</div>
+      </details>
+      <details class="faq reveal" data-d="0">
+        <summary>Übernehmt ihr auch Erdarbeiten und die Entsorgung?</summary>
+        <div class="faq__body">Ja. Boden vorbereiten, Erdarbeiten, Entwässerung sowie die fachgerechte Entsorgung von Aushub und Grünschnitt gehören zu unserer Arbeit und werden im Angebot berücksichtigt.</div>
+      </details>
+      <details class="faq reveal" data-d="0">
+        <summary>Arbeitet ihr für Privatkunden und Gewerbe?</summary>
+        <div class="faq__body">Beides. Wir betreuen private Gärten ebenso wie gewerbliche Außenanlagen, von der einmaligen Gestaltung bis zur laufenden Pflege.</div>
+      </details>
+      <details class="faq reveal" data-d="0">
+        <summary>In welchem Umkreis seid ihr tätig?</summary>
+        <div class="faq__body">Unser Schwerpunkt liegt in Bühlertal, Bühl und Baden-Baden. Kunden in Achern, Rastatt und der weiteren Ortenau betreuen wir ebenfalls regelmäßig.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="finalcta" id="finalcta">
+  <div class="wrap">
+    <div class="finalcta__box reveal">
+      <div class="finalcta__media">
+        <img src="bilder/g-02.jpg" alt="Von Bäuerle neu gestaltete Außenanlage mit Pflasterweg und Rasen">
+      </div>
+      <div class="finalcta__text">
+        <span class="eyebrow eyebrow--dark">Bereit loszulegen?</span>
+        <h2>Holen Sie sich Ihr <em>kostenloses Angebot</em></h2>
+        <p>Erzählen Sie uns kurz von Ihrem Vorhaben. Sie bekommen eine ehrliche Einschätzung und ein transparentes Angebot, unverbindlich und ohne Risiko.</p>
+        <div class="finalcta__btns">
+          <a href="#kontakt" class="btn btn--primary">Jetzt Angebot anfragen
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="tel:+4972237759" class="btn btn--ghost-light">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+            07223 7759
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="sec" id="kontakt" style="background:var(--anthracite);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(70% 90% at 15% 20%,rgba(21,128,61,.18),transparent 55%);z-index:0"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="contact">
+      <div class="contact__intro reveal reveal--left">
+        <span class="eyebrow eyebrow--dark">Kostenlose Anfrage</span>
+        <h2 class="sec__title" style="color:#fff;margin-top:16px">Lassen Sie uns über Ihr <em style="color:var(--green-600)">Projekt sprechen</em></h2>
+        <p class="sec__desc" style="color:#D6D3D1">Schildern Sie uns kurz Ihr Vorhaben. Wir melden uns zeitnah mit einem unverbindlichen Angebot. Kein Risiko, keine versteckten Kosten.</p>
+        <ul class="contact__list">
+          <li><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11Z" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.9"/></svg></span><a href="https://maps.google.com/?cid=2521467208484716984" target="_blank" rel="noopener">Matthäuserstraße 23, 77830 Bühlertal</a></li>
+          <li><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span><a href="tel:+4972237759">07223 7759</a> · <a href="tel:+4915154420522">0151 54420522</a></li>
+          <li><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.9"/><path d="m4 6 8 6 8-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a href="mailto:info@gartengestaltung-baeuerle.de">info@gartengestaltung-baeuerle.de</a></li>
+          <li><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></span><a href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">@baeuerle_gartengestaltung</a></li>
+        </ul>
+        <div class="contact__assure">
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="var(--green-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Antwort meist innerhalb von 24 Stunden</div>
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="var(--green-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Unverbindlich und kostenlos</div>
+        </div>
+      </div>
+
+      <form class="contact__form reveal reveal--right" data-d="1" id="leadForm" novalidate>
+        <div class="frow">
+          <div class="field"><label for="f-name">Vorname, Name *</label><input id="f-name" name="name" type="text" required placeholder="Max Mustermann"></div>
+          <div class="field"><label for="f-phone">Telefonnummer *</label><input id="f-phone" name="phone" type="tel" required placeholder="0151 234567"></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" placeholder="max@beispiel.de"></div>
+          <div class="field"><label for="f-proj">Art des Projekts *</label>
+            <select id="f-proj" name="project" required>
+              <option value="">Bitte wählen</option>
+              <option>Gartengestaltung &amp; -anlage</option>
+              <option>Rollrasen &amp; Bepflanzung</option>
+              <option>Pflaster- &amp; Wegebau</option>
+              <option>Mauern &amp; Gabionen</option>
+              <option>Zaun &amp; Sichtschutz</option>
+              <option>Pflege &amp; Instandhaltung</option>
+              <option>Andere</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="f-loc">Standort des Projekts</label><input id="f-loc" name="location" type="text" placeholder="z.B. Bühlertal"></div>
+          <div class="field"><label for="f-size">Projektgröße</label>
+            <select id="f-size" name="size">
+              <option value="">Bitte wählen</option>
+              <option>Klein · 5 bis 60 m²</option>
+              <option>Mittel · 60 bis 250 m²</option>
+              <option>Groß · über 250 m²</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="f-msg">Zusätzliche Informationen</label><textarea id="f-msg" name="message" rows="3" placeholder="Beschreiben Sie kurz Ihr Vorhaben"></textarea></div>
+        <label class="check"><input type="checkbox" id="f-dsgvo" required><span>Ich habe die <a href="#" data-legal style="color:var(--green-600);font-weight:600">Datenschutzbestimmungen</a> zur Kenntnis genommen. *</span></label>
+        <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;font-size:17px;margin-top:6px">Anfrage absenden
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <div class="nav__brand" style="margin-bottom:18px">
+          <span style="background:#fff;padding:11px 15px;border-radius:14px;display:inline-flex">
+            <img src="bilder/logo.png" alt="Bäuerle Gartengestaltung und Außenanlagen GmbH" style="height:46px;width:auto;display:block">
+          </span>
+        </div>
+        <p>Ihr Betrieb für Garten- und Landschaftsbau, Pflaster und Außenanlagen. Bühlertal, Bühl, Baden-Baden und die Ortenau.</p>
+      </div>
+      <div class="foot__col">
+        <h4>Navigation</h4>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber">Über uns</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="foot__col">
+        <h4>Leistungen</h4>
+        <a href="#leistungen">Garten- &amp; Landschaftsbau</a>
+        <a href="#leistungen">Pflaster- &amp; Wegebau</a>
+        <a href="#leistungen">Mauern &amp; Sichtschutz</a>
+        <a href="#leistungen">Pflege &amp; Instandhaltung</a>
+      </div>
+      <div class="foot__col">
+        <h4>Kontakt</h4>
+        <a href="https://maps.google.com/?cid=2521467208484716984" target="_blank" rel="noopener">Matthäuserstraße 23<br>77830 Bühlertal</a>
+        <a href="mailto:info@gartengestaltung-baeuerle.de">info@gartengestaltung-baeuerle.de</a>
+        <a href="tel:+4972237759">07223 7759</a>
+        <a href="https://www.instagram.com/baeuerle_gartengestaltung/" target="_blank" rel="noopener">Instagram: @baeuerle_gartengestaltung</a>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 Bäuerle Gartengestaltung und Außenanlagen GmbH · Alle Rechte vorbehalten</span>
+      <div class="foot__legal">
+        <a href="#" data-legal>Impressum</a>
+        <a href="#" data-legal>Datenschutz</a>
+        <a href="#" data-legal>AGB</a>
+        <a href="#" data-legal>Widerruf</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE-OPTIMIERUNG (spät, um Vorlagen-Basisregeln zu überschreiben) ===== -->
+<style>
+/* Vorlagen-Bug: .gallery2 und .finalcta__box definieren ihr Basis-Grid im CSS
+   NACH dem 920px-Media-Block und heben ihn dadurch auf. Hier spät nachgezogen. */
+@media (max-width:920px){
+  .gallery2{grid-template-columns:1fr 1fr;gap:14px}
+  .finalcta__box{grid-template-columns:1fr}
+  .finalcta__media{min-height:260px}
+  .finalcta__text{padding:38px 30px}
+}
+@media (max-width:560px){
+  .gallery2{grid-template-columns:1fr;gap:16px}
+  .gal2{aspect-ratio:4/3}
+  .finalcta__text{padding:30px 22px}
+  .finalcta__text h2{font-size:clamp(24px,7vw,32px)}
+}
+/* bessere Lesbarkeit der Projekt-Kacheln */
+.gal2__cap{overflow-wrap:break-word}
+.gal2 figcaption{padding:22px 16px 15px}
+.gal2__tag{background:rgba(21,128,61,.9);color:#fff}
+</style>
+
+<!-- ===== RECHTSTEXTE-PLATZHALTER (Pop-up) ===== -->
+<div class="legal-modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+  <div class="legal-modal__box">
+    <div class="legal-modal__ic">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 3h6l4 4v14H6V3h2Z" stroke="var(--green)" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v4h4M9 13h6M9 17h6" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </div>
+    <h3 id="legalModalTitle">Dokument in Vorbereitung</h3>
+    <p>Impressum, Datenschutzerklärung, AGB und Widerrufsbelehrung werden erstellt, sobald die Webseite bzw. der Auftrag genehmigt ist.</p>
+    <button type="button" class="btn btn--primary" id="legalModalClose" style="justify-content:center">Verstanden</button>
+  </div>
+</div>
+<style>
+.legal-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(28,25,23,.55);backdrop-filter:blur(4px)}
+.legal-modal.open{display:flex}
+.legal-modal__box{background:#fff;border-radius:var(--r-lg);max-width:440px;width:100%;padding:38px 34px;text-align:center;box-shadow:var(--shadow-lg);animation:legalIn .28s cubic-bezier(.16,.8,.3,1)}
+@keyframes legalIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.legal-modal__ic{width:62px;height:62px;margin:0 auto 20px;border-radius:50%;background:var(--green-50);border:1px solid var(--green-100);display:flex;align-items:center;justify-content:center}
+.legal-modal__box h3{font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.legal-modal__box p{margin:12px 0 26px;font-size:15.5px;color:var(--stone-700);line-height:1.65}
+</style>
+<script>
+(function(){
+  var modal=document.getElementById('legalModal');
+  if(!modal) return;
+  var closeBtn=document.getElementById('legalModalClose');
+  function open(e){ if(e) e.preventDefault(); modal.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+  document.querySelectorAll('[data-legal]').forEach(function(a){ a.addEventListener('click',open); });
+  closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && modal.classList.contains('open')) close(); });
+})();
+</script>
+
+<script>
+(function(){
+  /* ---- Nav scroll state + progress ---- */
+  const nav=document.getElementById('nav');
+  const progress=document.getElementById('progress');
+  let ticking=false;
+  function onScroll(){
+    if(ticking) return;
+    ticking=true;
+    requestAnimationFrame(()=>{
+      const y=window.scrollY;
+      nav.classList.toggle('scrolled', y>40);
+      const h=document.documentElement.scrollHeight-window.innerHeight;
+      progress.style.width=(h>0?(y/h)*100:0)+'%';
+      ticking=false;
+    });
+  }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  /* ---- Mobile menu ---- */
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  function toggleMenu(force){
+    const open = force!==undefined ? force : !menu.classList.contains('open');
+    menu.classList.toggle('open',open);
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click',()=>toggleMenu());
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+  /* ---- Reveal on scroll ---- */
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ---- Count-up stats ---- */
+  const statIO=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el=e.target, target=+el.dataset.count, suffix=el.dataset.suffix||'';
+      const dur=1400, t0=performance.now();
+      function tick(now){
+        const p=Math.min(1,(now-t0)/dur);
+        const eased=1-Math.pow(1-p,3);
+        el.textContent=Math.round(target*eased).toLocaleString('de-DE')+suffix;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      statIO.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>statIO.observe(el));
+
+  /* ---- Before/After slider ---- */
+  const ba=document.getElementById('ba');
+  if(ba){
+    const before=document.getElementById('baBefore');
+    const handle=document.getElementById('baHandle');
+    const hint=document.getElementById('baHint');
+    let dragging=false,hinted=false,kbPct=50;
+    function setPos(clientX){
+      const r=ba.getBoundingClientRect();
+      let x=Math.max(0,Math.min(1,(clientX-r.left)/r.width));
+      const pct=x*100; kbPct=pct;
+      before.style.clipPath=`inset(0 ${100-pct}% 0 0)`;
+      handle.style.left=pct+'%';
+      if(!hinted){hint.style.opacity='0';hinted=true;}
+    }
+    const start=e=>{dragging=true;ba.style.cursor='ew-resize';move(e);};
+    const end=()=>{dragging=false;ba.style.cursor='';};
+    const move=e=>{ if(!dragging)return; const cx=e.touches?e.touches[0].clientX:e.clientX; setPos(cx); if(e.cancelable)e.preventDefault(); };
+    handle.addEventListener('mousedown',start); ba.addEventListener('mousedown',start);
+    window.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
+    handle.addEventListener('touchstart',start,{passive:false}); ba.addEventListener('touchstart',start,{passive:false});
+    window.addEventListener('touchmove',move,{passive:false}); window.addEventListener('touchend',end);
+    handle.setAttribute('tabindex','0'); handle.setAttribute('role','slider');
+    handle.setAttribute('aria-label','Vorher-Nachher-Vergleich');
+    handle.addEventListener('keydown',e=>{
+      if(e.key==='ArrowLeft')kbPct=Math.max(0,kbPct-4);
+      else if(e.key==='ArrowRight')kbPct=Math.min(100,kbPct+4);
+      else return;
+      before.style.clipPath=`inset(0 ${100-kbPct}% 0 0)`; handle.style.left=kbPct+'%';
+      hint.style.opacity='0'; e.preventDefault();
+    });
+
+    /* ---- Umschalten zwischen echten Projekt-Paaren ---- */
+    const afterImg=document.getElementById('baAfter');
+    const beforeImg=document.getElementById('baBeforeImg');
+    const tabs=document.querySelectorAll('.ba-tab');
+    function resetSlider(){
+      before.style.clipPath='inset(0 50% 0 0)'; handle.style.left='50%'; kbPct=50;
+    }
+    tabs.forEach(tab=>{
+      tab.addEventListener('click',()=>{
+        tabs.forEach(t=>t.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        // sanfter Wechsel
+        ba.style.opacity='0';
+        setTimeout(()=>{
+          beforeImg.src=tab.dataset.v;
+          afterImg.src=tab.dataset.n;
+          resetSlider();
+          ba.style.opacity='1';
+        },180);
+      });
+    });
+    ba.style.transition='opacity .2s ease';
+  }
+
+  /* ---- Icon-Strichlängen für Draw-Animation setzen ---- */
+  document.querySelectorAll('.serv__ic svg').forEach(svg=>{
+    svg.querySelectorAll('path,rect,circle,line').forEach(el=>{
+      let len=120;
+      try{ if(el.getTotalLength) len=el.getTotalLength(); }catch(e){}
+      el.style.setProperty('--len', Math.ceil(len)+1);
+    });
+  });
+
+  /* ---- Magnetischer Hero-CTA (nur Desktop, nicht touch) ---- */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    const magnet=document.querySelector('.hero__cta .btn--primary');
+    if(magnet){
+      const strength=0.32;
+      magnet.style.transition='transform .25s cubic-bezier(.2,.7,.2,1)';
+      magnet.addEventListener('mousemove',e=>{
+        const r=magnet.getBoundingClientRect();
+        const mx=e.clientX-(r.left+r.width/2);
+        const my=e.clientY-(r.top+r.height/2);
+        magnet.style.transform=`translate(${mx*strength}px,${my*strength}px)`;
+      });
+      magnet.addEventListener('mouseleave',()=>{ magnet.style.transform='translate(0,0)'; });
+    }
+  }
+
+  /* ---- FAQ: nur ein Eintrag gleichzeitig offen ---- */
+  const faqs=document.querySelectorAll('.faq');
+  faqs.forEach(f=>{
+    f.addEventListener('toggle',()=>{
+      if(f.open){ faqs.forEach(o=>{ if(o!==f) o.open=false; }); }
+    });
+  });
+
+  /* ---- Lead form (Demo-Validierung, kein echter Versand) ---- */
+  const form=document.getElementById('leadForm');
+  const note=document.getElementById('formNote');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const req=form.querySelectorAll('[required]');
+    let ok=true;
+    req.forEach(f=>{
+      const bad = f.type==='checkbox' ? !f.checked : !f.value.trim();
+      f.style.borderColor = bad ? 'var(--danger)' : '';
+      if(bad) ok=false;
+    });
+    if(!ok){ note.textContent='Bitte füllen Sie die Pflichtfelder (*) aus.'; note.className='form-note err'; return; }
+    note.textContent='Vielen Dank. Ihre Anfrage ist bei uns eingegangen, wir melden uns zeitnah. (Demo: noch kein echter Versand angebunden.)';
+    note.className='form-note ok';
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
