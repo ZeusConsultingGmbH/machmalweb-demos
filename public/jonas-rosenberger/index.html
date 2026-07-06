@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonas Rosenberger — Ehrliche Finanzberatung | Über 10.000 € mehr fürs Alter</title>
+<meta name="description" content="Unabhängige, transparente Finanzberatung von Jonas Rosenberger. Kein Kleingedrucktes, keine versteckten Kosten. Jetzt Renteneintritt und Riester vs. Altersvorsorgedepot selbst durchrechnen.">
+<meta name="theme-color" content="#0E2F2A">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231F8A5B'/%3E%3Cpath d='M11 28l8-8 5 5 12-13' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M31 12h8v8' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   KLARTEXT — Jonas Rosenberger
+   Design tokens
+   ============================================================ */
+:root{
+  --ink:#0E2F2A;         /* deepest pine — text + dark sections */
+  --forest:#16473F;      /* dark section alt */
+  --pine:#2C6B60;        /* mid teal */
+  --green:#1F8A5B;       /* signature accent */
+  --green-bright:#27A468;
+  --green-deep:#166B45;
+  --mint:#DCEDE4;        /* soft green tint */
+  --mint-2:#EAF3ED;
+  --paper:#F4F3EE;       /* warm paper ground */
+  --paper-2:#EFEDE4;
+  --card:#FFFFFF;
+  --line:#E4DFD2;        /* warm hairline */
+  --line-strong:#D6D0BF;
+  --gold:#C99A3E;        /* sparing premium accent */
+  --ink-70:#33453F;
+  --ink-55:#4C5D57;
+  --ink-40:#71807A;
+  --danger:#B4562F;
+
+  --font-display:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:"Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --wrap:1180px;
+  --radius:16px;
+  --radius-lg:26px;
+  --shadow-sm:0 1px 2px rgba(14,47,42,.05), 0 4px 14px rgba(14,47,42,.05);
+  --shadow-md:0 8px 30px rgba(14,47,42,.10);
+  --shadow-lg:0 24px 60px rgba(14,47,42,.16);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"tnum" 0;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.04;letter-spacing:-.02em;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.section--tight{padding:64px 0}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--green-deep);
+  font-weight:700;
+  display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--green);display:inline-block}
+.eyebrow--light{color:#8FD6B4}
+.eyebrow--light::before{background:#8FD6B4}
+
+.lede{font-size:1.18rem;color:var(--ink-55);max-width:62ch}
+.tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  padding:16px 26px;border-radius:999px;border:2px solid transparent;
+  font-weight:700;font-size:1rem;letter-spacing:-.01em;
+  transition:transform .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease), color .2s;
+  will-change:transform;
+}
+.btn svg{width:1.05em;height:1.05em}
+.btn--primary{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(31,138,91,.28)}
+.btn--primary:hover{background:var(--green-bright);transform:translateY(-2px);box-shadow:0 16px 34px rgba(31,138,91,.36)}
+.btn--ink{background:var(--ink);color:#fff}
+.btn--ink:hover{background:var(--forest);transform:translateY(-2px)}
+.btn--ghost{background:transparent;border-color:var(--line-strong);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--ink);background:#fff;transform:translateY(-2px)}
+.btn--light{background:#fff;color:var(--ink)}
+.btn--light:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn--sm{padding:11px 18px;font-size:.92rem}
+.btn--block{width:100%}
+
+.ticks{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:26px}
+.tick{display:inline-flex;align-items:center;gap:.5em;font-size:.92rem;font-weight:600;color:var(--ink-70)}
+.tick svg{width:18px;height:18px;color:var(--green);flex:none}
+.tick--light{color:#D7E5DE}
+.tick--light svg{color:#8FD6B4}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(244,243,238,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s, background .3s, box-shadow .3s;
+}
+.site-header.scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(14,47,42,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:800;font-size:1.12rem;letter-spacing:-.02em}
+.brand .mark{
+  width:38px;height:38px;border-radius:11px;flex:none;
+  background:linear-gradient(150deg,var(--green-deep),var(--green) 52%,var(--green-bright));
+  color:#fff;display:grid;place-items:center;
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 12px rgba(31,138,91,.28),inset 0 1px 0 rgba(255,255,255,.22);
+}
+.brand .mark::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 20% 0%,rgba(255,255,255,.28),transparent 60%);pointer-events:none}
+.brand .mark svg{width:21px;height:21px;position:relative;z-index:1}
+.brand small{display:block;font-family:var(--font-mono);font-weight:400;font-size:.6rem;letter-spacing:.16em;color:var(--green-deep);text-transform:uppercase;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-weight:600;font-size:.96rem;color:var(--ink-70);position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .28s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-toggle{display:none;background:none;border:none;padding:8px;color:var(--ink)}
+.nav-toggle svg{width:26px;height:26px}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;padding:72px 0 88px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(120% 90% at 78% 8%,#000 0%,transparent 62%);
+  -webkit-mask-image:radial-gradient(120% 90% at 78% 8%,#000 0%,transparent 62%);
+  opacity:.6;
+}
+.hero-curve{position:absolute;right:-4%;top:0;width:66%;height:100%;z-index:0;opacity:.9}
+.hero-glow{position:absolute;right:2%;top:-10%;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(31,138,91,.16),transparent 66%);filter:blur(10px);z-index:0}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.2vw,4.35rem);margin:22px 0 0}
+.hero h1 .u{position:relative;white-space:nowrap;color:var(--green-deep)}
+.hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.14em;background:var(--green);opacity:.28;border-radius:2px;transform:scaleX(0);transform-origin:left;animation:underline 1s var(--ease) .8s forwards}
+@keyframes underline{to{transform:scaleX(1)}}
+.hero p.sub{font-size:1.22rem;color:var(--ink-55);margin:26px 0 0;max-width:56ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* hero side card — outcome teaser */
+.hero-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);padding:26px;position:relative;overflow:hidden;
+}
+.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--green),var(--pine))}
+.hero-card .hc-label{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-40)}
+.hero-card .hc-big{font-family:var(--font-mono);font-weight:700;font-size:2.9rem;color:var(--green-deep);line-height:1;margin:8px 0 2px;letter-spacing:-.02em}
+.hero-card .hc-sub{font-size:.9rem;color:var(--ink-55)}
+.hc-bars{display:flex;align-items:flex-end;gap:14px;height:120px;margin:22px 0 8px}
+.hc-bar{flex:1;border-radius:8px 8px 0 0;position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.hc-bar span{position:absolute;bottom:calc(100% + 6px);font-family:var(--font-mono);font-size:.72rem;font-weight:700;white-space:nowrap}
+.hc-bar em{position:absolute;top:calc(100% + 6px);font-size:.72rem;font-style:normal;color:var(--ink-40);font-weight:600}
+.hc-bar.a{background:var(--paper-2);height:42%}
+.hc-bar.a span{color:var(--ink-40)}
+.hc-bar.b{background:linear-gradient(180deg,var(--green-bright),var(--green));height:0;transition:height 1.2s var(--ease) .4s;box-shadow:0 8px 20px rgba(31,138,91,.25)}
+.hc-bar.b.grow{height:100%}
+.hc-bar.b span{color:var(--green-deep)}
+.hc-foot{display:flex;align-items:center;gap:.5em;font-size:.82rem;color:var(--ink-40);border-top:1px dashed var(--line-strong);padding-top:14px;margin-top:6px}
+.hc-foot svg{width:15px;height:15px;flex:none;color:var(--green)}
+
+/* ============================================================
+   TRUST / COUNTERS
+   ============================================================ */
+.trust{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.trust::after{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(90% 100% at 50% 0%,#000,transparent 75%);
+  -webkit-mask-image:radial-gradient(90% 100% at 50% 0%,#000,transparent 75%);}
+.trust .wrap{position:relative;z-index:1}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{padding:14px 6px}
+.stat .num{font-family:var(--font-mono);font-weight:700;font-size:clamp(2.1rem,4vw,2.9rem);letter-spacing:-.03em;color:#fff;line-height:1;display:flex;align-items:baseline;gap:.08em}
+.stat .num .suffix{color:var(--green-bright)}
+.stat .lbl{margin-top:12px;font-size:.94rem;color:#B9CEC6;max-width:24ch}
+.stat .lbl b{color:#fff;font-weight:700}
+.stat + .stat{border-left:1px solid rgba(255,255,255,.12)}
+.trust-note{margin-top:26px;font-size:.78rem;color:#6E8B82;font-family:var(--font-mono);letter-spacing:.03em}
+
+/* ============================================================
+   PROBLEM / WHY HONEST
+   ============================================================ */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-top{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:end;margin-bottom:52px}
+.why-top h2{font-size:clamp(2rem,4vw,3rem);margin-top:20px}
+.why-top .lede{margin-bottom:4px}
+.compare-band{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 36px;box-shadow:var(--shadow-md);margin-bottom:52px}
+.compare-quote{font-size:.92rem;color:var(--ink-55);margin-top:24px;padding-top:20px;border-top:1px dashed var(--line-strong);display:flex;gap:.6em;align-items:flex-start}
+.compare-quote svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--green)}
+.compare-row{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:stretch;margin-top:20px}
+.compare-col{border-radius:var(--radius);padding:26px 26px;display:flex;flex-direction:column;gap:18px}
+.compare-col.bad{background:var(--paper-2)}
+.compare-col.good{background:var(--ink);color:#DDEAE4;box-shadow:0 14px 34px rgba(14,47,42,.18)}
+.compare-head{display:flex;align-items:center;gap:12px}
+.compare-badge{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none}
+.compare-badge svg{width:21px;height:21px}
+.compare-col.bad .compare-badge{background:#EBDCD4;color:var(--danger)}
+.compare-col.good .compare-badge{background:rgba(143,214,180,.16);color:#8FD6B4}
+.compare-head h4{font-size:1.08rem;font-family:var(--font-body);font-weight:700;letter-spacing:-.01em}
+.compare-col.bad h4{color:var(--ink-70)}
+.compare-col.good h4{color:#fff}
+.compare-col ul{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+.compare-col li{display:flex;gap:.65em;align-items:flex-start;font-size:.95rem;line-height:1.42}
+.compare-col li svg{width:18px;height:18px;flex:none;margin-top:1px}
+.compare-col.bad li{color:var(--ink-55)}
+.compare-col.bad li svg{color:#BC7A61}
+.compare-col.good li svg{color:var(--green-bright)}
+.compare-col.good li b{color:#fff}
+.vs-chip{align-self:center;font-family:var(--font-mono);font-weight:700;font-size:.72rem;color:var(--ink-40);letter-spacing:.12em}
+.why-list{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-item{display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.why-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
+.why-item .ico{width:52px;height:52px;border-radius:14px;background:var(--mint);color:var(--green-deep);display:grid;place-items:center;flex:none}
+.why-item .ico svg{width:26px;height:26px}
+.why-item h3{font-size:1.2rem;margin-bottom:6px}
+.why-item p{color:var(--ink-55);font-size:.96rem}
+
+/* ============================================================
+   CALCULATOR — shared "instrument" styling
+   ============================================================ */
+.calc-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.calc-head{background:var(--ink);color:#fff;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.calc-head .ch-title{display:flex;align-items:center;gap:14px}
+.calc-head .ch-ico{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex:none;border:1px solid rgba(255,255,255,.12)}
+.calc-head .ch-ico svg{width:24px;height:24px;color:var(--green-bright)}
+.calc-head h3{font-size:1.3rem;color:#fff}
+.calc-head .ch-title p{font-size:.85rem;color:#A9C2BA;margin-top:2px}
+.calc-badge{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#8FD6B4;border:1px solid rgba(143,214,180,.35);border-radius:999px;padding:6px 12px}
+.calc-body{display:grid;grid-template-columns:1fr 1.05fr;gap:0}
+.calc-inputs{padding:32px 30px;border-right:1px solid var(--line)}
+.calc-output{padding:32px 30px;background:linear-gradient(180deg,#fff,var(--mint-2));position:relative}
+
+.field{margin-bottom:24px}
+.field:last-child{margin-bottom:0}
+.field label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:600;font-size:.95rem;margin-bottom:10px}
+.field label .val{font-family:var(--font-mono);font-weight:700;color:var(--green-deep);font-size:1rem}
+.field .hint{font-size:.8rem;color:var(--ink-40);margin-top:8px;line-height:1.4}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* range slider */
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:999px;
+  background:var(--paper-2);outline:none;margin:6px 0;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--green);border:4px solid #fff;box-shadow:0 2px 8px rgba(31,138,91,.4);cursor:pointer;transition:transform .15s}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.12)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--green);border:4px solid #fff;box-shadow:0 2px 8px rgba(31,138,91,.4);cursor:pointer}
+
+/* number + select */
+.inp,select.inp{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line-strong);border-radius:12px;
+  font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--ink);background:#fff;
+  transition:border-color .2s, box-shadow .2s;
+}
+.inp:focus,select.inp:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(31,138,91,.12);outline:none}
+select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230E2F2A' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+
+/* segmented control */
+.seg{display:inline-flex;background:var(--paper-2);border-radius:12px;padding:4px;gap:4px;width:100%}
+.seg button{flex:1;border:none;background:transparent;padding:10px 12px;border-radius:9px;font-weight:600;font-size:.9rem;color:var(--ink-55);transition:all .2s}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+
+/* stepper */
+.stepper{display:inline-flex;align-items:center;gap:2px;border:1.5px solid var(--line-strong);border-radius:12px;overflow:hidden}
+.stepper button{width:44px;height:46px;border:none;background:#fff;font-size:1.3rem;font-weight:700;color:var(--green-deep);transition:background .15s}
+.stepper button:hover{background:var(--mint)}
+.stepper input{width:56px;text-align:center;border:none;font-family:var(--font-mono);font-weight:700;font-size:1.05rem;color:var(--ink);background:#fff;-moz-appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none}
+
+/* output readouts */
+.readout-main{border-radius:var(--radius);background:var(--ink);color:#fff;padding:22px 24px;position:relative;overflow:hidden;margin-bottom:18px}
+.readout-main::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:var(--green)}
+.readout-main .ro-label{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#8FD6B4}
+.readout-main .ro-value{font-family:var(--font-mono);font-weight:700;font-size:clamp(2rem,4.4vw,2.7rem);line-height:1.05;margin:6px 0 2px;letter-spacing:-.02em}
+.readout-main .ro-value small{font-size:1.1rem;color:#B9CEC6;font-weight:400}
+.readout-main .ro-sub{font-size:.9rem;color:#B9CEC6}
+
+.ro-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.ro-cell{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.ro-cell .c-label{font-size:.78rem;color:var(--ink-40);font-weight:600;display:flex;align-items:center;gap:.4em}
+.ro-cell .c-value{font-family:var(--font-mono);font-weight:700;font-size:1.5rem;color:var(--ink);margin-top:4px;letter-spacing:-.02em}
+.ro-cell .c-value.green{color:var(--green-deep)}
+.ro-cell .c-value.muted{color:var(--ink-40)}
+.ro-cell .c-note{font-size:.76rem;color:var(--ink-40);margin-top:2px}
+
+/* comparison bars (Rechner 2) */
+.bars{display:grid;gap:18px;margin:6px 0 18px}
+.bar-block .bar-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.bar-block .bar-name{font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:.5em}
+.bar-block .bar-name .dot{width:11px;height:11px;border-radius:50%;flex:none}
+.bar-block .bar-total{font-family:var(--font-mono);font-weight:700;font-size:1.15rem}
+.bar-track{height:42px;border-radius:11px;background:var(--paper-2);overflow:hidden;display:flex}
+.bar-seg{height:100%;display:flex;align-items:center;justify-content:center;transition:width 1s var(--ease);min-width:0;overflow:hidden;white-space:nowrap}
+.bar-seg .st{font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:0 6px;opacity:0;transition:opacity .4s .6s}
+.bar-seg.show .st{opacity:1}
+.seg-own{background:var(--pine)}
+.seg-own .st{color:#fff}
+.seg-fund{background:var(--green)}
+.seg-fund .st{color:#fff}
+.seg-growth{background:var(--gold)}
+.seg-growth .st{color:#3a2c07}
+.bar-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.8rem;color:var(--ink-55);margin-top:2px}
+.bar-legend span{display:inline-flex;align-items:center;gap:.45em}
+.bar-legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+.verdict{border-radius:var(--radius);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;border:1px solid}
+.verdict.win{background:var(--mint);border-color:#B7DEC9}
+.verdict.win .v-ico{color:var(--green-deep)}
+.verdict.close{background:#FBF3E3;border-color:#EAD9B0}
+.verdict.close .v-ico{color:var(--gold)}
+.verdict .v-ico{width:26px;height:26px;flex:none;margin-top:1px}
+.verdict h4{font-family:var(--font-body);font-size:1.02rem;font-weight:700;margin-bottom:3px}
+.verdict p{font-size:.9rem;color:var(--ink-55)}
+.verdict b{color:var(--ink)}
+
+.calc-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+.calc-note{font-size:.76rem;color:var(--ink-40);line-height:1.5;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line-strong);display:flex;gap:.6em}
+.calc-note svg{width:15px;height:15px;flex:none;margin-top:2px;color:var(--ink-40)}
+
+.assump{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.assump summary{padding:14px 18px;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none}
+.assump summary::-webkit-details-marker{display:none}
+.assump summary .chev{transition:transform .25s;color:var(--ink-40)}
+.assump[open] summary .chev{transform:rotate(180deg)}
+.assump .assump-body{padding:0 18px 16px;font-size:.85rem;color:var(--ink-55)}
+.assump .assump-body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
+.svc .num{font-family:var(--font-mono);font-size:.72rem;color:var(--green-deep);font-weight:700;letter-spacing:.1em}
+.svc .svc-ico{width:52px;height:52px;border-radius:14px;background:var(--mint);color:var(--green-deep);display:grid;place-items:center;margin:14px 0 18px}
+.svc .svc-ico svg{width:26px;height:26px}
+.svc h3{font-size:1.24rem;margin-bottom:10px}
+.svc p{color:var(--ink-55);font-size:.96rem}
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process{background:var(--forest);color:#fff;position:relative;overflow:hidden}
+.process::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(31,138,91,.22),transparent 70%)}
+.process .wrap{position:relative;z-index:1}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px;counter-reset:step}
+.step{position:relative;padding-top:28px}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--font-mono);font-weight:700;font-size:2.6rem;color:var(--green-bright);opacity:.9;letter-spacing:-.04em;display:block;margin-bottom:14px}
+.step h3{font-size:1.35rem;color:#fff;margin-bottom:10px}
+.step p{color:#B9CEC6;font-size:.98rem}
+.step .line{position:absolute;top:52px;left:calc(100% - 8px);width:26px;height:2px;background:rgba(143,214,180,.4)}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.about-portrait{position:relative}
+.about-portrait .frame{
+  aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;
+  background:linear-gradient(160deg,var(--ink),var(--forest));position:relative;
+  border:1px solid var(--line);box-shadow:var(--shadow-lg);
+  display:grid;place-items:center;
+}
+.about-portrait .frame .ph{color:rgba(255,255,255,.22);text-align:center;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:20px}
+.about-portrait .frame .ph svg{width:66px;height:66px;margin:0 auto 14px;display:block;color:rgba(255,255,255,.28)}
+.about-portrait .sig{
+  position:absolute;bottom:-22px;left:-22px;background:#fff;border-radius:18px;padding:18px 22px;box-shadow:var(--shadow-lg);border:1px solid var(--line);
+}
+.about-portrait .sig .name{font-family:var(--font-display);font-weight:800;font-size:1.05rem}
+.about-portrait .sig .role{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-deep);margin-top:2px}
+.about blockquote{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.28;letter-spacing:-.02em;margin:22px 0;color:var(--ink)}
+.about blockquote .hl{color:var(--green-deep)}
+.about .creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.cred{display:inline-flex;align-items:center;gap:.5em;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.86rem;font-weight:600}
+.cred svg{width:16px;height:16px;color:var(--green)}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.testi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px}
+.stars{display:flex;gap:3px;color:var(--gold)}
+.stars svg{width:18px;height:18px}
+.testi p{font-size:1.02rem;color:var(--ink-70);line-height:1.5;flex:1}
+.testi .who{display:flex;align-items:center;gap:12px}
+.testi .who .av{width:44px;height:44px;border-radius:50%;background:var(--mint);color:var(--green-deep);display:grid;place-items:center;font-weight:800;font-family:var(--font-display);flex:none}
+.testi .who .nm{font-weight:700;font-size:.94rem}
+.testi .who .mt{font-size:.82rem;color:var(--ink-40)}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list{max-width:820px;margin:44px auto 0;display:grid;gap:14px}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:box-shadow .3s,border-color .3s}
+.faq[open]{box-shadow:var(--shadow-md);border-color:var(--line-strong)}
+.faq summary{padding:22px 26px;font-family:var(--font-display);font-weight:700;font-size:1.1rem;letter-spacing:-.01em;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q-ico{width:30px;height:30px;flex:none;border-radius:9px;background:var(--mint);color:var(--green-deep);display:grid;place-items:center;transition:transform .3s,background .3s}
+.faq summary .q-ico svg{width:18px;height:18px;transition:transform .3s}
+.faq[open] summary .q-ico{background:var(--green);color:#fff}
+.faq[open] summary .q-ico svg{transform:rotate(45deg)}
+.faq .faq-a{padding:0 26px 24px;color:var(--ink-55);font-size:1rem;line-height:1.6}
+.faq .faq-a a{color:var(--green-deep);font-weight:600;border-bottom:1px solid currentColor}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:60px 60px;mask-image:radial-gradient(90% 120% at 50% 100%,#000,transparent 72%);
+  -webkit-mask-image:radial-gradient(90% 120% at 50% 100%,#000,transparent 72%);}
+.final .wrap{position:relative;z-index:1;text-align:center}
+.final h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:16ch;margin:22px auto 0}
+.final h2 .hl{color:var(--green-bright)}
+.final p{font-size:1.15rem;color:#B9CEC6;max-width:56ch;margin:22px auto 0}
+.final-actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:38px}
+.final .ticks{justify-content:center}
+
+/* contact strip */
+.contact{background:var(--paper-2)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-md)}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cf-field{margin-bottom:18px}
+.cf-field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px}
+.cf-field textarea{min-height:120px;resize:vertical}
+.contact-side .ci-item{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.contact-side .ci-ico{width:48px;height:48px;border-radius:13px;background:var(--mint);color:var(--green-deep);display:grid;place-items:center;flex:none}
+.contact-side .ci-ico svg{width:23px;height:23px}
+.contact-side .ci-item h4{font-family:var(--font-body);font-size:1.02rem;font-weight:700;margin-bottom:3px}
+.contact-side .ci-item p{color:var(--ink-55);font-size:.95rem}
+.contact-side .ci-item a{color:var(--green-deep);font-weight:600}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--ink);color:#9FB6AE;padding:64px 0 30px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer .brand{color:#fff}
+.footer .brand small{color:#8FD6B4}
+.footer p.desc{margin-top:16px;font-size:.92rem;max-width:36ch;line-height:1.6}
+.footer h5{color:#fff;font-family:var(--font-body);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.footer ul a{font-size:.93rem;transition:color .2s}
+.footer ul a:hover{color:#fff}
+.footer-legal{padding-top:26px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:.8rem;color:#6E8B82}
+.footer-legal .disc{max-width:70ch;line-height:1.6}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.06);display:grid;place-items:center;transition:background .2s,transform .2s;border:1px solid rgba(255,255,255,.08)}
+.socials a:hover{background:var(--green);transform:translateY(-2px)}
+.socials a svg{width:19px;height:19px;color:#fff}
+.ph-flag{color:var(--gold);font-weight:700}
+
+/* ============================================================
+   REVEAL ANIMATION
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1000px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-card{max-width:460px}
+  .split,.about,.contact-inner,.why-top{grid-template-columns:1fr;gap:40px}
+  .why-top{gap:14px;margin-bottom:40px}
+  .svc-grid,.testi-grid,.steps,.why-list{grid-template-columns:1fr 1fr}
+  .step .line{display:none}
+  .calc-body{grid-template-columns:1fr}
+  .calc-inputs{border-right:none;border-bottom:1px solid var(--line)}
+}
+@media(max-width:760px){
+  .section{padding:66px 0}
+  .nav-links{
+    position:fixed;inset:72px 0 auto 0;background:var(--paper);flex-direction:column;
+    align-items:stretch;gap:0;padding:14px 24px 24px;border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow-md);transform:translateY(-140%);transition:transform .35s var(--ease);z-index:55;
+  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:15px 4px;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav-links a::after{display:none}
+  .nav-cta .btn:not(.nav-toggle){display:none}
+  .nav-toggle{display:inline-flex}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:0}
+  .stat + .stat{border-left:none}
+  .stat{border-top:1px solid rgba(255,255,255,.12);padding:22px 6px}
+  .stat:nth-child(-n+2){border-top:none}
+  .stat:nth-child(even){border-left:1px solid rgba(255,255,255,.12)}
+  .svc-grid,.testi-grid,.steps,.why-list{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1fr}
+  .compare-band{padding:24px 20px}
+  .vs-chip{justify-self:center;padding:2px 0}
+  .field-row,.ro-grid,.cf-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .about-portrait .sig{left:0}
+  .hero h1 .u{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-delay:0s !important;transition-duration:.001ms !important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+
+<style>
+/* ================= Enrichment layer — Logo · Google-Bewertungen · Portrait · Demo ================= */
+
+/* softened placeholder flags (demo — echte Angaben werden vor dem Livegang ergänzt) */
+.ph-flag{color:var(--ink-40);font-weight:600;font-style:normal}
+
+/* ---- Google-Bewertungen: Zusammenfassung ---- */
+.g-summary{display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+  max-width:620px;margin:36px auto 0;padding:20px 28px;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+.g-summary .g-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:1.02rem;color:var(--ink)}
+.g-summary .g-logo svg{width:26px;height:26px}
+.g-summary .g-score{display:flex;flex-direction:column;gap:4px}
+.g-summary .g-num{font-family:var(--font-display);font-weight:800;font-size:1.7rem;line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.g-summary .g-num .stars svg{width:17px;height:17px}
+.g-summary .g-count{font-size:.82rem;color:var(--ink-40)}
+.g-summary .g-cta{margin-left:auto}
+@media(max-width:600px){.g-summary{flex-direction:column;text-align:center;gap:14px}.g-summary .g-cta{margin-left:0}.g-summary .g-score{align-items:center}}
+
+.btn--ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--green);color:var(--green-deep)}
+
+/* ---- Rezensions-Karten im Google-Look ---- */
+.testi .t-head{display:flex;align-items:center;gap:12px}
+.testi .t-head .av{width:42px;height:42px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:800;font-family:var(--font-display);flex:none;font-size:1.05rem}
+.testi .t-head .nm{font-weight:700;font-size:.96rem;line-height:1.15}
+.testi .t-head .mt{font-size:.8rem;color:var(--ink-40)}
+.testi .t-head .g-badge{margin-left:auto;flex:none}
+.testi .t-head .g-badge svg{width:20px;height:20px;display:block}
+
+/* ---- Portrait-Panel (markiert, bereit für echtes Foto) ---- */
+.about-portrait .frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame-art{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(135% 100% at 80% 6%,rgba(31,138,91,.40),transparent 56%),linear-gradient(158deg,var(--ink),var(--forest) 60%,#0b2622)}
+.frame-art .rings{position:absolute;width:150%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.07);top:-32%;right:-42%}
+.frame-art .rings::before,.frame-art .rings::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.07)}
+.frame-art .rings::before{inset:15%}
+.frame-art .rings::after{inset:32%;border-color:rgba(39,164,104,.28)}
+.frame-art .mono{position:relative;font-family:var(--font-display);font-weight:800;font-size:8.4rem;line-height:1;letter-spacing:-.05em;
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.32);
+  background:linear-gradient(158deg,rgba(255,255,255,.92),rgba(220,237,228,.22));-webkit-background-clip:text;background-clip:text}
+.frame-art .curve{position:absolute;bottom:-4%;left:-8%;width:74%;color:var(--green-bright);opacity:.55}
+.frame-art .tag{position:absolute;top:18px;left:18px;font-family:var(--font-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 12px}
+
+/* ---- dezente Demo-/machmalweb-Signatur ---- */
+.demo-note{margin-top:16px;font-size:.76rem;color:var(--ink-40);line-height:1.5;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.footer-legal .demo-note{justify-content:flex-start}
+.demo-note .m{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);letter-spacing:.04em;white-space:nowrap}
+.demo-note .m b{font-family:var(--font-display);font-weight:800;color:var(--green-deep)}
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Jonas Rosenberger — Startseite">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.5l5-5 3.5 3.5L20 5.5"/><path d="M15.5 5.5H20V10"/><circle cx="4" cy="14.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </span>
+      <span>Jonas Rosenberger<small>Ehrliche Finanzberatung</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
+      <a href="#warum">Warum ich</a>
+      <a href="#rechner">Rechner</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#kontakt" class="btn btn--primary btn--sm">Termin buchen</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <svg class="hero-curve" viewBox="0 0 600 500" fill="none" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="curveGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#1F8A5B" stop-opacity="0"/>
+          <stop offset="1" stop-color="#1F8A5B"/>
+        </linearGradient>
+        <linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1F8A5B" stop-opacity=".16"/>
+          <stop offset="1" stop-color="#1F8A5B" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path id="curveArea" d="M20,470 C160,455 250,430 340,320 C410,235 470,150 580,60 L580,500 L20,500 Z" fill="url(#curveFill)" opacity="0"/>
+      <path id="curveLine" d="M20,470 C160,455 250,430 340,320 C410,235 470,150 580,60" stroke="url(#curveGrad)" stroke-width="4" stroke-linecap="round"/>
+      <circle id="curveDot" r="8" fill="#1F8A5B" opacity="0"><animate attributeName="opacity" values="0;1" begin="1.9s" dur="0.4s" fill="freeze"/></circle>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Unabhängiger Makler · für Menschen, nicht für Produkte</span>
+      <h1>Über <span class="u">10.000&nbsp;€ mehr</span> fürs Alter — mit Beratung, die ehrlich rechnet.</h1>
+      <p class="sub">Ich bin Jonas Rosenberger. Kein Kleingedrucktes, keine versteckten Kosten — nur der klare Blick auf das, was für <em>dich</em> wirklich zählt. Und weil ehrlich am längsten währt, kannst du hier direkt selbst nachrechnen.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn--primary">
+          Kostenloses Erstgespräch buchen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#rechner" class="btn btn--ghost">Erst mal selbst rechnen ↓</a>
+      </div>
+      <div class="ticks">
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>100&nbsp;% unabhängig</span>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Alles transparent</span>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Honorar oder Provision — du entscheidest</span>
+      </div>
+    </div>
+
+    <aside class="hero-card" id="heroCard" aria-label="Beispielrechnung Mehrertrag">
+      <div class="hc-label">Beispiel · 100&nbsp;€/Monat · 30&nbsp;Jahre</div>
+      <div class="hc-big" data-count-to="43000" data-prefix="+" data-suffix="&nbsp;€">+0&nbsp;€</div>
+      <div class="hc-sub">mögliches Plus mit dem richtigen Baustein statt teurem Altvertrag</div>
+      <div class="hc-bars" aria-hidden="true">
+        <div class="hc-bar a"><span>≈ 47.000&nbsp;€</span><em>Altvertrag</em></div>
+        <div class="hc-bar b" id="heroBarB"><span>≈ 90.000&nbsp;€</span><em>ehrlich geplant</em></div>
+      </div>
+      <div class="hc-foot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        Vereinfachtes Beispiel. Deine Zahlen rechnest du unten selbst.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ TRUST / COUNTERS ============================ -->
+<section class="trust section--tight">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="stat">
+        <div class="num"><span data-count-to="10000">0</span><span class="suffix">+&nbsp;€</span></div>
+        <div class="lbl"><b>Ø Mehrertrag fürs Alter</b> in Beispielrechnungen — durch weniger Kosten &amp; bessere Bausteine</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count-to="100">0</span><span class="suffix">%</span></div>
+        <div class="lbl"><b>unabhängig &amp; ehrlich</b> — an keine Versicherung oder Bank gebunden</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count-to="15">0</span><span class="suffix">&nbsp;Mio.</span></div>
+        <div class="lbl"><b>Riester-Verträge</b> in Deutschland, die jetzt auf den Prüfstand gehören</div>
+      </div>
+      <div class="stat">
+        <div class="num">2027</div>
+        <div class="lbl"><b>Altersvorsorgedepot startet</b> — jetzt die Weichen richtig stellen</div>
+      </div>
+    </div>
+    <p class="trust-note">* Beispielhafte Modellwerte zur Orientierung, keine garantierte Wertentwicklung. Quelle Vertragszahl: Deutsche Rentenversicherung / Marktdaten.</p>
+  </div>
+</section>
+
+<!-- ============================ WHY HONEST ============================ -->
+<section class="section" id="warum">
+  <div class="wrap">
+    <div class="why-top">
+      <div class="reveal">
+        <span class="eyebrow">Warum ehrliche Beratung?</span>
+        <h2>Die meisten „Berater" verkaufen dir ein Produkt. Ich sortiere erst mal deine Zahlen.</h2>
+      </div>
+      <p class="lede reveal" data-d="1">Ehrlich währt am längsten — gerade wenn's ums Geld geht. Bei mir liegen alle Karten offen auf dem Tisch: keine versteckten Kosten, kein Kleingedrucktes, keine Vorgaben einer Gesellschaft. Du stehst im Mittelpunkt, nicht ein vorgefertigtes Produkt.</p>
+    </div>
+
+    <div class="compare-band reveal">
+      <span class="eyebrow">Der ehrliche Unterschied</span>
+      <div class="compare-row">
+        <div class="compare-col bad">
+          <div class="compare-head">
+            <span class="compare-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg></span>
+            <h4>Übliche Vertriebe</h4>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>An eine Gesellschaft gebunden</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Kosten im Kleingedruckten</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Produkt zuerst, du danach</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Provision als einziges Modell</li>
+          </ul>
+        </div>
+        <div class="vs-chip">VS</div>
+        <div class="compare-col good">
+          <div class="compare-head">
+            <span class="compare-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <h4>Beratung bei mir</h4>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Komplett unabhängig</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Jede Kostenposition offen</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Deine Ziele stehen zuerst</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Honorar <b>oder</b> Provision — du wählst</li>
+          </ul>
+        </div>
+      </div>
+      <p class="compare-quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> „Honorar oder Provision? Ich rechne beides für dich durch — klar und verständlich."</p>
+    </div>
+
+    <div class="why-list">
+      <div class="why-item reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div><h3>Volle Transparenz</h3><p>Alle Kosten, alle Provisionen, alle Alternativen — offen und verständlich erklärt, bevor du irgendetwas unterschreibst.</p></div>
+      </div>
+      <div class="why-item reveal" data-d="1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><h3>Wirklich unabhängig</h3><p>Als Makler bin ich an keine Bank und keine Versicherung gebunden. Ich empfehle, was zu dir passt — nicht, was die höchste Provision bringt.</p></div>
+      </div>
+      <div class="why-item reveal" data-d="2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v4"/></svg></div>
+        <div><h3>Digitaler Finanzordner</h3><p>Alle Verträge an einem Ort, jederzeit griffbereit. So behältst du selbst die volle Kontrolle — auch ohne mich.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RECHNER SECTION ============================ -->
+<section class="section" id="rechner" style="background:linear-gradient(180deg,var(--paper),var(--paper-2))">
+  <div class="wrap">
+    <div style="text-align:center;max-width:720px;margin:0 auto" class="reveal">
+      <span class="eyebrow" style="justify-content:center">Zwei Rechner · sofort Klarheit</span>
+      <h2 style="font-size:clamp(2.1rem,4.4vw,3.2rem);margin-top:20px">Rechne selbst — bevor du mit mir sprichst.</h2>
+      <p class="lede" style="margin:22px auto 0">Kein Login, keine E-Mail, kein Haken. Verschieb die Regler und sieh in Echtzeit, wo du stehst. Genau diese Ehrlichkeit bekommst du auch in der Beratung.</p>
+    </div>
+
+    <!-- ---------- RECHNER 1: RENTENEINTRITT ---------- -->
+    <div class="calc-wrap reveal" style="margin-top:52px" id="calc1">
+      <div class="calc-head">
+        <div class="ch-title">
+          <div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><h3>Renteneintrittsrechner</h3><p>Wann kannst du (abschlagsfrei) in Rente?</p></div>
+        </div>
+        <span class="calc-badge">Rechner 01</span>
+      </div>
+      <div class="calc-body">
+        <div class="calc-inputs">
+          <div class="field">
+            <label for="r1-year">Dein Geburtsjahr <span class="val" id="r1-year-val">1985</span></label>
+            <input type="range" id="r1-year" min="1950" max="2007" value="1985" step="1">
+            <div class="hint">Ziehe den Regler auf dein Geburtsjahr (1950–2007).</div>
+          </div>
+          <div class="field">
+            <label for="r1-month">Geburtsmonat</label>
+            <select class="inp" id="r1-month">
+              <option value="0">Januar</option><option value="1">Februar</option><option value="2">März</option>
+              <option value="3">April</option><option value="4">Mai</option><option value="5" selected>Juni</option>
+              <option value="6">Juli</option><option value="7">August</option><option value="8">September</option>
+              <option value="9">Oktober</option><option value="10">November</option><option value="11">Dezember</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r1-years">Voraussichtliche Beitragsjahre <span class="val" id="r1-years-val">40 J.</span></label>
+            <input type="range" id="r1-years" min="5" max="50" value="40" step="1">
+            <div class="hint">Ab 35 Jahren: frühere Rente mit Abschlag möglich. Ab 45 Jahren: 2 Jahre früher ohne Abschlag.</div>
+          </div>
+        </div>
+        <div class="calc-output">
+          <div class="readout-main">
+            <div class="ro-label">Reguläre Rente ohne Abschlag ab</div>
+            <div class="ro-value" id="r1-main">67 <small>Jahren</small></div>
+            <div class="ro-sub" id="r1-main-sub">Regelaltersgrenze für deinen Jahrgang · Rentenbeginn ca. 07/2052</div>
+          </div>
+          <div class="ro-grid">
+            <div class="ro-cell">
+              <div class="c-label">Frühestens ohne Abschlag<br><span style="font-weight:400;color:var(--ink-40)">(mit 45 Beitragsjahren)</span></div>
+              <div class="c-value green" id="r1-early45">65 J.</div>
+              <div class="c-note" id="r1-early45-note">2 Jahre vor der Regelgrenze</div>
+            </div>
+            <div class="ro-cell">
+              <div class="c-label">Früheste Frührente<br><span style="font-weight:400;color:var(--ink-40)">(mit 35 Beitragsjahren)</span></div>
+              <div class="c-value" id="r1-early35">63 J.</div>
+              <div class="c-note" id="r1-early35-note">Abschlag: <b id="r1-abschlag">14,4 %</b></div>
+            </div>
+          </div>
+          <div class="verdict win" id="r1-verdict" style="margin-bottom:16px">
+            <svg class="v-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            <div><h4 id="r1-verdict-h">Noch <span id="r1-jahre-bis">27</span> Jahre bis zur regulären Rente.</h4><p id="r1-verdict-p">Genug Zeit, um mit dem richtigen Baustein eine spürbare Rentenlücke zu schließen — je früher du startest, desto stärker arbeitet der Zinseszins für dich.</p></div>
+          </div>
+          <div class="calc-cta">
+            <a href="#kontakt" class="btn btn--primary btn--sm">Rentenlücke gemeinsam schließen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#calc2" class="btn btn--ghost btn--sm">Weiter zum Vorsorge-Vergleich</a>
+          </div>
+          <div class="calc-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            Unverbindliche Orientierung nach § 235 SGB VI (Regelaltersgrenze). Sonderfälle wie Schwerbehinderung, Erwerbsminderung oder Vertrauensschutz sind nicht abgebildet und keine Rechtsberatung.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- RECHNER 2: RIESTER VS ALTERSVORSORGEDEPOT ---------- -->
+    <div class="calc-wrap reveal" style="margin-top:40px" id="calc2">
+      <div class="calc-head">
+        <div class="ch-title">
+          <div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 15l5-5 4 4 7-8"/><path d="M8 19h13"/></svg></div>
+          <div><h3>Riester vs. Altersvorsorgedepot</h3><p>Was bringt dir das neue Depot ab 2027 wirklich?</p></div>
+        </div>
+        <span class="calc-badge">Rechner 02</span>
+      </div>
+      <div class="calc-body">
+        <div class="calc-inputs">
+          <div class="field">
+            <label for="r2-rate">Monatlicher Eigenbeitrag <span class="val" id="r2-rate-val">100&nbsp;€</span></label>
+            <input type="range" id="r2-rate" min="10" max="300" value="100" step="5">
+            <div class="hint">Volle Förderung schöpfst du bei 150&nbsp;€/Monat (1.800&nbsp;€/Jahr) aus.</div>
+          </div>
+          <div class="field">
+            <label for="r2-years">Spardauer bis zur Rente <span class="val" id="r2-years-val">30 J.</span></label>
+            <input type="range" id="r2-years" min="5" max="45" value="30" step="1">
+          </div>
+          <div class="field">
+            <label for="r2-income">Brutto-Jahreseinkommen <span class="val" id="r2-income-val">45.000&nbsp;€</span></label>
+            <input type="range" id="r2-income" min="12000" max="120000" value="45000" step="1000">
+            <div class="hint">Wichtig für die Riester-Förderung (Mindesteigenbeitrag 4&nbsp;%).</div>
+          </div>
+          <div class="field">
+            <label>Kinder (Kindergeldbezug)</label>
+            <div class="stepper" role="group" aria-label="Anzahl Kinder">
+              <button type="button" id="r2-kids-minus" aria-label="weniger">−</button>
+              <input type="text" id="r2-kids" value="0" inputmode="numeric" readonly aria-live="polite">
+              <button type="button" id="r2-kids-plus" aria-label="mehr">+</button>
+            </div>
+            <div class="hint">300&nbsp;€ Kinderzulage pro Kind — im Depot schon ab 25&nbsp;€/Monat voll.</div>
+          </div>
+          <div class="field">
+            <label>Berufseinsteiger-Bonus</label>
+            <div class="seg" role="group" aria-label="Unter 25 Jahre">
+              <button type="button" class="on" data-u25="0" id="r2-u25-no">Über 25</button>
+              <button type="button" data-u25="1" id="r2-u25-yes">Unter 25 (+200&nbsp;€)</button>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field" style="margin-bottom:0">
+              <label for="r2-etf" style="font-size:.88rem">ETF-Rendite p.a. <span class="val" id="r2-etf-val">7,0 %</span></label>
+              <input type="range" id="r2-etf" min="4" max="9" value="7" step="0.5">
+            </div>
+            <div class="field" style="margin-bottom:0">
+              <label for="r2-riester-r" style="font-size:.88rem">Riester-Rendite p.a. <span class="val" id="r2-riester-r-val">2,0 %</span></label>
+              <input type="range" id="r2-riester-r" min="0.5" max="4" value="2" step="0.5">
+            </div>
+          </div>
+          <p class="hint" style="margin-top:10px">Riester-Rendite ist wegen Beitragsgarantie &amp; hoher Kosten meist niedrig. Depot-Netto = ETF-Rendite − 0,5&nbsp;% Depotkosten.</p>
+        </div>
+
+        <div class="calc-output">
+          <div class="verdict win" id="r2-verdict">
+            <svg class="v-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div><h4 id="r2-verdict-h">Das Altersvorsorgedepot lohnt sich für dich deutlich.</h4><p id="r2-verdict-p">Mit deinen Angaben stünden am Ende rund <b id="r2-diff">43.000&nbsp;€</b> mehr zur Verfügung als im alten Riester-Vertrag.</p></div>
+          </div>
+
+          <div class="bars">
+            <div class="bar-block">
+              <div class="bar-top">
+                <span class="bar-name"><span class="dot" style="background:var(--pine)"></span>Altersvorsorgedepot (ab 2027)</span>
+                <span class="bar-total green" id="r2-avd-total" style="color:var(--green-deep)">≈ 90.000&nbsp;€</span>
+              </div>
+              <div class="bar-track" id="r2-avd-track">
+                <div class="bar-seg seg-own" id="r2-avd-own"><span class="st"></span></div>
+                <div class="bar-seg seg-fund" id="r2-avd-fund"><span class="st"></span></div>
+                <div class="bar-seg seg-growth" id="r2-avd-growth"><span class="st"></span></div>
+              </div>
+            </div>
+            <div class="bar-block">
+              <div class="bar-top">
+                <span class="bar-name"><span class="dot" style="background:var(--ink-40)"></span>Riester-Vertrag (alt)</span>
+                <span class="bar-total" id="r2-ries-total">≈ 47.000&nbsp;€</span>
+              </div>
+              <div class="bar-track" id="r2-ries-track">
+                <div class="bar-seg seg-own" id="r2-ries-own"><span class="st"></span></div>
+                <div class="bar-seg seg-fund" id="r2-ries-fund"><span class="st"></span></div>
+                <div class="bar-seg seg-growth" id="r2-ries-growth"><span class="st"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="bar-legend">
+            <span><i style="background:var(--pine)"></i>Dein Einsatz</span>
+            <span><i style="background:var(--green)"></i>Staatliche Förderung</span>
+            <span><i style="background:var(--gold)"></i>Rendite &amp; Zinseszins</span>
+          </div>
+
+          <div class="ro-grid" style="margin-top:20px">
+            <div class="ro-cell">
+              <div class="c-label">Staatl. Förderung gesamt · Depot</div>
+              <div class="c-value green" id="r2-avd-foerder">16.200&nbsp;€</div>
+              <div class="c-note">Zulagen über die Laufzeit</div>
+            </div>
+            <div class="ro-cell">
+              <div class="c-label">Staatl. Förderung gesamt · Riester</div>
+              <div class="c-value muted" id="r2-ries-foerder">14.250&nbsp;€</div>
+              <div class="c-note">Grund- &amp; Kinderzulage</div>
+            </div>
+          </div>
+
+          <div class="calc-cta" style="margin-top:18px">
+            <a href="#kontakt" class="btn btn--primary btn--sm">Riester ehrlich prüfen lassen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+
+          <details class="assump">
+            <summary>Welche Annahmen stecken drin? <span class="chev"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="assump-body">
+              <ul>
+                <li><b>Depot-Grundzulage:</b> 50&nbsp;Ct je € bis 360&nbsp;€/Jahr, dann 25&nbsp;Ct je € bis 1.800&nbsp;€/Jahr — max. 540&nbsp;€ pro Jahr.</li>
+                <li><b>Riester-Grundzulage:</b> 175&nbsp;€/Jahr bei erfülltem Mindesteigenbeitrag (4&nbsp;% vom Brutto, max. 2.100&nbsp;€, Sockel 60&nbsp;€) — sonst anteilig gekürzt.</li>
+                <li><b>Kinderzulage:</b> je 300&nbsp;€/Jahr (Annahme: Kinder ab 2008 geboren).</li>
+                <li><b>Rendite:</b> Depot-Netto = ETF-Rendite − 0,5&nbsp;% Kosten; Riester mit separater Netto-Rendite (Garantie + Produktkosten).</li>
+                <li>Berechnung mit jährlicher Verzinsung, Einzahlung zum Jahresanfang. Steuern in der Auszahlphase &amp; Günstigerprüfung sind vereinfacht nicht enthalten.</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="calc-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            Unverbindliche Modellrechnung auf Basis der beschlossenen Reform (Stand 2026) — keine Anlage- oder Steuerberatung und keine Zusage einer Wertentwicklung.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEISTUNGEN ============================ -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div style="max-width:680px" class="reveal">
+      <span class="eyebrow">Was ich für dich mache</span>
+      <h2 style="font-size:clamp(2.1rem,4.4vw,3.2rem);margin-top:20px">Ein Ansprechpartner für deine ganzen Finanzen.</h2>
+      <p class="lede" style="margin-top:22px">Von der Absicherung bis zur Altersvorsorge — verständlich erklärt und ehrlich durchgerechnet. Der Überblick ist entscheidend.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><span class="num">01</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Altersvorsorge &amp; Rente</h3><p>Riester ehrlich prüfen, Altersvorsorgedepot verstehen, Rentenlücke schließen. Damit dir am Ende mehr bleibt — nicht dem Anbieter.</p>
+      </div>
+      <div class="svc reveal" data-d="1"><span class="num">02</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Versicherungen</h3><p>Die richtige Absicherung für Leben, Beruf und Alltag — ohne teure Doppelverträge und ohne Lücken, wo es drauf ankommt.</p>
+      </div>
+      <div class="svc reveal" data-d="2"><span class="num">03</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>Vermögensaufbau</h3><p>Langfristig investieren mit klarer Strategie und niedrigen Kosten. Kein heißer Tipp, sondern ein Plan, der zu deinem Leben passt.</p>
+      </div>
+      <div class="svc reveal"><span class="num">04</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v4M16 4v4"/></svg></div>
+        <h3>Digitaler Finanzordner</h3><p>Alle Verträge gebündelt, jederzeit einsehbar. Du hast alles im Griff und behältst die volle Kontrolle — auf jedem Gerät.</p>
+      </div>
+      <div class="svc reveal" data-d="1"><span class="num">05</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8h4v4M20 8l-8 8-4-4-4 4"/></svg></div>
+        <h3>Honorar oder Provision?</h3><p>Ich rechne beide Wege transparent durch und zeige dir, was für dich günstiger ist. Du entscheidest — ohne Druck.</p>
+      </div>
+      <div class="svc reveal" data-d="2"><span class="num">06</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Der ehrliche Überblick</h3><p>Ein Kennenlernen ohne Verpflichtung: Wir sortieren gemeinsam, wo du stehst — und was wirklich zu tun ist. Mehr nicht, aber auch nicht weniger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABLAUF ============================ -->
+<section class="section process" id="ablauf">
+  <div class="wrap">
+    <div style="max-width:680px" class="reveal">
+      <span class="eyebrow eyebrow--light">So läuft's ab</span>
+      <h2 style="font-size:clamp(2.1rem,4.4vw,3.2rem);margin-top:20px;color:#fff">In drei ehrlichen Schritten zum Überblick.</h2>
+      <p class="lede" style="margin-top:22px;color:#B9CEC6">Kein Verkaufsgespräch, kein Druck. Erst verstehen, dann rechnen, dann umsetzen — nur wenn es für dich passt.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="line"></span>
+        <h3>Unverbindliches Erstgespräch</h3><p>Wir lernen uns kennen und du erzählst, wo du stehst und was dir wichtig ist. Kostenlos und ohne jede Verpflichtung.</p>
+      </div>
+      <div class="step reveal" data-d="1"><span class="line"></span>
+        <h3>Ehrliche Analyse</h3><p>Ich sortiere deine Verträge, decke Kosten und Lücken auf und rechne Alternativen offen durch. Alles nachvollziehbar erklärt.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <h3>Umsetzung &amp; Betreuung</h3><p>Nur wenn du überzeugt bist, setzen wir um — und ich bleibe dein Ansprechpartner, wenn sich dein Leben verändert.</p>
+      </div>
+    </div>
+    <div style="margin-top:44px">
+      <a href="#kontakt" class="btn btn--light">Schritt 1 starten — Termin buchen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ÜBER ============================ -->
+<section class="section" id="ueber">
+  <div class="wrap about">
+    <div class="about-portrait reveal">
+      <div class="frame">
+        <img src="data:image/jpeg;base64,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" alt="Jonas Rosenberger — Unabhängiger Versicherungsmakler" loading="lazy">
+      </div>
+      <div class="sig">
+        <div class="name">Jonas Rosenberger</div>
+        <div class="role">Unabhängiger Makler</div>
+      </div>
+    </div>
+    <div class="reveal" data-d="1">
+      <span class="eyebrow">Über mich</span>
+      <blockquote>„Du stehst im Mittelpunkt — <span class="hl">nicht ein vorgefertigtes Produkt.</span> Ich biete dir genau das, was du brauchst, ohne Kompromisse."</blockquote>
+      <p class="lede">Ich habe Finanzberatung erlebt, wie sie zu oft läuft: undurchsichtig, produktgetrieben, mit einem Auge auf der Provision. Das wollte ich anders machen. Als unabhängiger Makler bin ich an keine Gesellschaft gebunden und lege alle Karten offen auf den Tisch — damit du genau weißt, woran du bist.</p>
+      <div class="creds">
+        <span class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Unabhängiger Versicherungsmakler</span>
+        <span class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>§ 34d GewO <span class="ph-flag">· Reg.-Nr. im Impressum</span></span>
+        <span class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Transparente Vergütung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<!-- DEMO: Beispiel-Bewertungen im Google-Look. Vor Livegang durch echte, freigegebene Google-Rezensionen (inkl. korrekter Anzahl/Schnitt) ersetzen. -->
+<section class="section" style="background:linear-gradient(180deg,var(--paper-2),var(--paper))">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto" class="reveal">
+      <span class="eyebrow" style="justify-content:center">Bewertungen</span>
+      <h2 style="font-size:clamp(2rem,4.2vw,3rem);margin-top:20px">Ehrlichkeit, die man weiterempfiehlt.</h2>
+    </div>
+
+    <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+      <symbol id="ico-google" viewBox="0 0 48 48">
+        <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+        <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+        <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+        <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+      </symbol>
+      <symbol id="ico-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+    </svg>
+
+    <div class="g-summary reveal">
+      <div class="g-logo"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg>Google&nbsp;Rezensionen</div>
+      <div class="g-score">
+        <div class="g-num">5,0
+          <span class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></span>
+        </div>
+        <div class="g-count">Basierend auf 24&nbsp;Rezensionen</div>
+      </div>
+      <a class="btn btn--ghost btn--sm g-cta" href="#kontakt">Alle Rezensionen</a>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="t-head">
+          <span class="av" style="background:#C2571E">S</span>
+          <div><div class="nm">Sarah K.</div><div class="mt">vor 3&nbsp;Wochen</div></div>
+          <span class="g-badge" title="Google Rezension"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg></span>
+        </div>
+        <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></div>
+        <p>„Endlich jemand, der mir meine Verträge in normalem Deutsch erklärt. Jonas hat mir eine teure Police gezeigt, die ich gar nicht brauchte — und mir damit richtig Geld gespart."</p>
+      </div>
+      <div class="testi reveal" data-d="1">
+        <div class="t-head">
+          <span class="av" style="background:#2C6B60">M</span>
+          <div><div class="nm">Michael B.</div><div class="mt">vor 1&nbsp;Monat</div></div>
+          <span class="g-badge" title="Google Rezension"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg></span>
+        </div>
+        <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></div>
+        <p>„Kein Verkaufsdruck, keine Fachbegriffe-Show. Wir haben meinen Riester durchgerechnet und einen Plan gemacht, den ich wirklich verstehe. Sehr transparent."</p>
+      </div>
+      <div class="testi reveal" data-d="2">
+        <div class="t-head">
+          <span class="av" style="background:#7A57B2">L</span>
+          <div><div class="nm">Lena T.</div><div class="mt">vor 2&nbsp;Monaten</div></div>
+          <span class="g-badge" title="Google Rezension"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg></span>
+        </div>
+        <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></div>
+        <p>„Der digitale Finanzordner ist Gold wert — ich sehe alles auf einen Blick. Und bei Fragen ist Jonas schnell erreichbar. Klare Empfehlung."</p>
+      </div>
+      <div class="testi reveal">
+        <div class="t-head">
+          <span class="av" style="background:#1F8A5B">T</span>
+          <div><div class="nm">Thomas R.</div><div class="mt">vor 1&nbsp;Woche</div></div>
+          <span class="g-badge" title="Google Rezension"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg></span>
+        </div>
+        <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></div>
+        <p>„Hatte Angebote von zwei anderen Beratern. Jonas war der Einzige, der mir ehrlich gesagt hat, welche Versicherung ich mir sparen kann. Danach war die Entscheidung leicht."</p>
+      </div>
+      <div class="testi reveal" data-d="1">
+        <div class="t-head">
+          <span class="av" style="background:#C99A3E">A</span>
+          <div><div class="nm">Aylin D.</div><div class="mt">vor 1&nbsp;Monat</div></div>
+          <span class="g-badge" title="Google Rezension"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg></span>
+        </div>
+        <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></div>
+        <p>„Super geduldig, auch bei meinen Anfänger-Fragen. ETF-Sparplan und Berufsunfähigkeit stehen jetzt endlich — und ich verstehe jede Position. Absolute Empfehlung."</p>
+      </div>
+      <div class="testi reveal" data-d="2">
+        <div class="t-head">
+          <span class="av" style="background:#3B6FA6">W</span>
+          <div><div class="nm">Familie Weber</div><div class="mt">vor 2&nbsp;Wochen</div></div>
+          <span class="g-badge" title="Google Rezension"><svg viewBox="0 0 48 48"><use href="#ico-google"/></svg></span>
+        </div>
+        <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></div>
+        <p>„Riester behalten oder ins neue Depot wechseln? Jonas hat beides in Ruhe durchgerechnet und uns nichts aufgeschwatzt. Genau diese Ehrlichkeit haben wir gesucht."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section" style="background:var(--paper)">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto" class="reveal">
+      <span class="eyebrow" style="justify-content:center">Häufige Fragen</span>
+      <h2 style="font-size:clamp(2rem,4.2vw,3rem);margin-top:20px">Kurz erklärt, ohne Fachchinesisch.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq reveal">
+        <summary>Was kostet mich die Beratung? <span class="q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a">Das Erstgespräch ist kostenlos und unverbindlich. Für die weitere Zusammenarbeit rechne ich dir <b>Honorar und Provision transparent gegenüber</b> — du siehst genau, was welcher Weg kostet, und entscheidest selbst. Versteckte Kosten gibt es bei mir grundsätzlich nicht.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Was ist das Altersvorsorgedepot — und was wird aus meinem Riester? <span class="q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a">Ab dem <b>1. Januar 2027</b> löst das staatlich geförderte Altersvorsorgedepot die Riester-Rente ab: renditeorientiert über ETFs, mit höherer Grundzulage (bis 540&nbsp;€ statt 175&nbsp;€), gedeckelten Kosten und flexiblerer Auszahlung. Bestehende Riester-Verträge laufen weiter (Bestandsschutz) — du kannst sie behalten, ruhen lassen oder ins Depot übertragen. <b>Kündigen ist fast nie sinnvoll</b>, weil Zulagen zurückzuzahlen wären. Was für dich passt, rechnen wir gemeinsam durch.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Lohnt sich der Wechsel ins Depot für alle? <span class="q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a">Für die meisten ja — vor allem wegen niedrigerer Kosten und höherer Renditechancen. Eine ehrliche Ausnahme: <b>Geringverdiener mit mehreren Kindern</b>, die nur sehr kleine Beiträge sparen, können im alten Riester-System mehr Zulagen erhalten. Genau deshalb rechne ich jeden Fall einzeln durch, statt pauschal zu empfehlen. Der Rechner oben gibt dir eine erste Richtung.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Wann kann ich in Rente gehen? <span class="q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a">Das hängt vom Geburtsjahr ab: Die Regelaltersgrenze steigt stufenweise auf <b>67 Jahre</b> (für alle ab Jahrgang 1964). Mit 45 Beitragsjahren geht es zwei Jahre früher ohne Abschlag, mit 35 Jahren früher gegen Abschlag. Der <a href="#rechner">Renteneintrittsrechner</a> oben zeigt dir deine persönlichen Grenzen in Sekunden.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Bist du wirklich unabhängig? <span class="q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a">Ja. Als Makler vertrete ich <b>dich</b> — nicht eine Versicherung oder Bank. Ich bin an keine Gesellschaft gebunden und kann aus dem gesamten Markt das auswählen, was zu deiner Situation passt. Meine Vergütung lege ich dabei immer offen.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Wie genau sind die Rechner auf dieser Seite? <span class="q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a">Die Rechner nutzen die aktuellen gesetzlichen Regeln (Regelaltersgrenze nach SGB VI, Förderlogik der Altersvorsorgereform) und geben dir eine gute erste Orientierung. Sie sind aber <b>vereinfachte Modelle und keine verbindliche Anlage- oder Steuerberatung</b>. Deine exakte Situation — mit Steuern, Sonderfällen und echten Produktkosten — schauen wir uns im Gespräch an.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="section final">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--light" style="justify-content:center">Der erste Schritt</span>
+    <h2>Deine Finanzen. Deine Zukunft. <span class="hl">Ehrlich geplant.</span></h2>
+    <p>Lern mich in einem unverbindlichen Erstgespräch kennen. Kostenlos, ohne Druck — und mit einem klaren Blick auf das, was für dich zählt.</p>
+    <div class="final-actions">
+      <a href="#kontakt" class="btn btn--primary">Kostenloses Erstgespräch buchen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#rechner" class="btn btn--light">Nochmal selbst rechnen</a>
+    </div>
+    <div class="ticks">
+      <span class="tick tick--light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Unverbindlich</span>
+      <span class="tick tick--light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Kostenlos</span>
+      <span class="tick tick--light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>100&nbsp;% transparent</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ KONTAKT ============================ -->
+<section class="section contact" id="kontakt">
+  <div class="wrap contact-inner">
+    <div class="reveal">
+      <span class="eyebrow">Kontakt</span>
+      <h2 style="font-size:clamp(2rem,4.2vw,3rem);margin-top:20px">Schreib mir — ich melde mich zeitnah.</h2>
+      <p class="lede" style="margin-top:20px">Kurz Formular ausfüllen oder direkt anrufen. Wir finden einen Termin, der zu dir passt.</p>
+      <div class="contact-side" style="margin-top:34px">
+        <div class="ci-item">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><h4>Telefon &amp; Rückruf</h4><p><a href="#kontakt">Rückruf anfordern</a> <span class="ph-flag">· Nummer folgt zum Livegang</span></p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+          <div><h4>E-Mail</h4><p><a href="mailto:kontakt@rosenbergerjonas.de">kontakt@rosenbergerjonas.de</a></p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Online &amp; vor Ort</h4><p>Beratung per Video in ganz Deutschland &amp; persönlich vor Ort <span class="ph-flag">(Region folgt)</span></p></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" data-d="1" action="mailto:kontakt@rosenbergerjonas.de" method="post" enctype="text/plain">
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-name">Name</label><input class="inp" type="text" id="cf-name" name="Name" placeholder="Vor- und Nachname" required></div>
+        <div class="cf-field"><label for="cf-phone">Telefon</label><input class="inp" type="tel" id="cf-phone" name="Telefon" placeholder="Optional"></div>
+      </div>
+      <div class="cf-field"><label for="cf-mail">E-Mail</label><input class="inp" type="email" id="cf-mail" name="E-Mail" placeholder="dein@email.de" required></div>
+      <div class="cf-field"><label for="cf-topic">Dein Anliegen</label>
+        <select class="inp" id="cf-topic" name="Anliegen">
+          <option>Altersvorsorge &amp; Rente</option><option>Riester / Altersvorsorgedepot prüfen</option>
+          <option>Versicherungen</option><option>Vermögensaufbau</option><option>Kompletter Finanz-Check</option><option>Etwas anderes</option>
+        </select>
+      </div>
+      <div class="cf-field"><label for="cf-msg">Nachricht</label><textarea class="inp" id="cf-msg" name="Nachricht" placeholder="Worum geht's? Ein paar Stichworte reichen."></textarea></div>
+      <button type="submit" class="btn btn--primary btn--block">Nachricht senden
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+      <p style="font-size:.78rem;color:var(--ink-40);margin-top:14px;text-align:center">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Kontaktaufnahme zu. <span class="ph-flag">(Datenschutzerklärung folgt zum Livegang)</span></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#top">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.5l5-5 3.5 3.5L20 5.5"/><path d="M15.5 5.5H20V10"/><circle cx="4" cy="14.5" r="1.5" fill="currentColor" stroke="none"/></svg></span>
+          <span>Jonas Rosenberger<small>Ehrliche Finanzberatung</small></span>
+        </a>
+        <p class="desc">Unabhängige, transparente Finanzberatung. Für Menschen, nicht für Produkte — ehrlich währt am längsten.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4zM8 8h3.8v2.2h.06c.53-1 1.83-2.2 3.76-2.2 4 0 4.78 2.64 4.78 6.08V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.74 1.86-2.74 3.78V24H8z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5H15c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Themen</h5>
+        <ul>
+          <li><a href="#warum">Warum ehrliche Beratung</a></li>
+          <li><a href="#rechner">Renteneintrittsrechner</a></li>
+          <li><a href="#rechner">Riester vs. Altersvorsorgedepot</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ablauf">Ablauf</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="#" class="ph-flag">Impressum · folgt</a></li>
+          <li><a href="#" class="ph-flag">Datenschutz · folgt</a></li>
+          <li><a href="#" class="ph-flag">Erstinformation § 15 VersVermV · folgt</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <div>© <span id="year">2026</span> Jonas Rosenberger · Unabhängiger Versicherungsmakler</div>
+      <div class="demo-note" style="flex-basis:100%;color:#6E8B82;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;margin-top:6px">
+        <span class="m" style="color:#CDE5DB"><b style="color:#8FD6B4">machmalweb</b> · Design-Vorschau</span>
+        <span>Unverbindliches Gestaltungsbeispiel. Portraitfoto, Google-Bewertungen sowie Rechtstexte (Impressum, Datenschutz, Registernummer) werden vor dem Livegang durch echte, freigegebene Angaben ersetzt.</span>
+      </div>
+      <div class="disc">Hinweis: Die Rechner und Beispielrechnungen auf dieser Seite dienen der unverbindlichen Orientierung und stellen keine Anlage-, Steuer- oder Rechtsberatung dar. Es besteht keine Zusage einer bestimmten Wertentwicklung. Angaben nach § 5 DDG und Vermittler-Registerdaten im Impressum.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var deDE = new Intl.NumberFormat("de-DE");
+  var fmtEuro = function(n){ return deDE.format(Math.round(n)) + " €"; };
+
+  /* ---------- header scroll ---------- */
+  var header = document.querySelector(".site-header");
+  var onScroll = function(){ header.classList.toggle("scrolled", window.scrollY > 10); };
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---------- mobile nav ---------- */
+  var toggle = document.getElementById("navToggle");
+  var links = document.getElementById("navLinks");
+  toggle.addEventListener("click", function(){
+    var open = links.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  links.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ links.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); });
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- reveal + counters ---------- */
+  var counted = new WeakSet();
+  var recompute = [];  // calc-Funktionen der Rechner, erneut aufgerufen beim Sichtbarwerden
+  function animateCount(el){
+    if(counted.has(el)) return; counted.add(el);
+    var target = parseFloat(el.getAttribute("data-count-to"));
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    if(reduce){ el.innerHTML = prefix + deDE.format(target) + suffix; return; }
+    var dur = 1400, start = performance.now();
+    function step(now){
+      var p = Math.min((now-start)/dur, 1);
+      var eased = 1 - Math.pow(1-p, 3);
+      el.innerHTML = prefix + deDE.format(Math.round(target*eased)) + suffix;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        e.target.classList.add("in");
+        e.target.querySelectorAll("[data-count-to]").forEach(animateCount);
+        if(e.target.hasAttribute("data-count-to")) animateCount(e.target);
+        if(e.target.id === "heroCard"){ var b=document.getElementById("heroBarB"); if(b) b.classList.add("grow"); }
+        if(e.target.id === "calc1" || e.target.id === "calc2"){
+          if(e.target.id === "calc2" && !reduce){
+            ["r2-avd-own","r2-avd-fund","r2-avd-growth","r2-ries-own","r2-ries-fund","r2-ries-growth"].forEach(function(id){
+              var seg=document.getElementById(id); if(seg) seg.style.width="0%";
+            });
+          }
+          setTimeout(function(){ recompute.forEach(function(f){ try{ f(); }catch(err){} }); }, 60);
+        }
+        io.unobserve(e.target);
+      });
+    }, {threshold:.2});
+    document.querySelectorAll(".reveal, .trust-grid, #heroCard").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+    document.querySelectorAll("[data-count-to]").forEach(animateCount);
+  }
+
+  /* ---------- hero curve draw ---------- */
+  (function(){
+    var line = document.getElementById("curveLine");
+    var area = document.getElementById("curveArea");
+    var dot  = document.getElementById("curveDot");
+    if(!line) return;
+    var len = line.getTotalLength();
+    function placeDot(){ if(!dot) return; var pt=line.getPointAtLength(len); dot.setAttribute("cx",pt.x); dot.setAttribute("cy",pt.y); }
+    placeDot();
+    if(reduce){ if(area) area.style.opacity=1; if(dot) dot.setAttribute("opacity","1"); return; }
+    line.style.strokeDasharray = len; line.style.strokeDashoffset = len;
+    line.style.transition = "stroke-dashoffset 1.9s cubic-bezier(.4,.1,.2,1)";
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ line.style.strokeDashoffset = 0; }); });
+    if(area){ area.style.transition="opacity 1.2s ease .9s"; setTimeout(function(){ area.style.opacity=1; }, 50); }
+    setTimeout(placeDot, 1900);
+  })();
+
+  /* ================================================================
+     RECHNER 1 — RENTENEINTRITT
+     ================================================================ */
+  (function(){
+    var monthsDE = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+    var yearEl=document.getElementById("r1-year"), yearVal=document.getElementById("r1-year-val");
+    var monthEl=document.getElementById("r1-month");
+    var yearsEl=document.getElementById("r1-years"), yearsVal=document.getElementById("r1-years-val");
+
+    function ragMonths(year){ // Regelaltersgrenze in total months
+      if(year<=1946) return 65*12;
+      if(year>=1964) return 67*12;
+      if(year<=1958) return 65*12 + (year-1946);      // +1 month/yr from 1947
+      return 66*12 + (year-1958)*2;                   // +2 months/yr from 1959
+    }
+    function fmtAge(m){ var y=Math.floor(m/12), mm=m%12; return mm? (y+" J. "+mm+" Mon.") : (y+" Jahren"); }
+    function fmtAgeShort(m){ var y=Math.floor(m/12), mm=m%12; return mm? (y+" J. "+mm+" M.") : (y+" J."); }
+
+    function calc(){
+      var year=parseInt(yearEl.value,10);
+      var bMonth=parseInt(monthEl.value,10);
+      var vYears=parseInt(yearsEl.value,10);
+      yearVal.textContent=year; yearsVal.textContent=vYears+" J.";
+
+      var rag=ragMonths(year);
+
+      // main readout
+      var y=Math.floor(rag/12), mm=rag%12;
+      document.getElementById("r1-main").innerHTML = mm
+        ? (y + ' <small>J.</small> ' + mm + ' <small>Mon.</small>')
+        : (y + ' <small>Jahre</small>');
+
+      // reach date = birth + rag ; Rentenbeginn = month after
+      var reachMonthIndex = bMonth + (rag%12);
+      var reachYear = year + Math.floor(rag/12) + Math.floor(reachMonthIndex/12);
+      var reachMonth = ((reachMonthIndex%12)+12)%12;
+      // Rentenbeginn following month
+      var startMonth = reachMonth+1, startYear=reachYear;
+      if(startMonth>11){ startMonth=0; startYear++; }
+      document.getElementById("r1-main-sub").innerHTML =
+        "Regelaltersgrenze für Jahrgang "+year+" · Rentenbeginn ca. "+String(startMonth+1).padStart(2,"0")+"/"+startYear;
+
+      // 45 years: 2 years earlier, only if eligible
+      var early45 = rag - 24;
+      var elig45 = vYears>=45;
+      document.getElementById("r1-early45").textContent = fmtAgeShort(early45);
+      document.getElementById("r1-early45-note").innerHTML = elig45
+        ? "2 Jahre vor der Regelgrenze — erreichbar ✔"
+        : "nur mit 45 Beitragsjahren (aktuell "+vYears+")";
+
+      // 35 years: from 63 with Abschlag 0.3%/month before RAG
+      var earliest = 63*12;
+      var elig35 = vYears>=35;
+      var abschlagMonths = rag - earliest;
+      var abschlag = Math.max(0, abschlagMonths*0.3);
+      document.getElementById("r1-early35").textContent = elig35 ? "63 J." : "—";
+      document.getElementById("r1-early35-note").innerHTML = elig35
+        ? ("Abschlag: <b>"+deDE.format(Math.round(abschlag*10)/10)+" %</b>")
+        : "erst ab 35 Beitragsjahren";
+
+      // years until regular retirement from now
+      var now=new Date();
+      var startDateVal = startYear + startMonth/12;
+      var nowVal = now.getFullYear() + now.getMonth()/12;
+      var jahreBis = Math.max(0, Math.round(startDateVal - nowVal));
+      var vh=document.getElementById("r1-verdict"), h=document.getElementById("r1-verdict-h"), p=document.getElementById("r1-verdict-p");
+
+      if(jahreBis<=0){
+        vh.className="verdict close";
+        h.textContent="Du hast die Regelaltersgrenze bereits erreicht.";
+        p.innerHTML="Jetzt zählt vor allem eine kluge Auszahlungs- und Steuerstrategie. Lass uns gemeinsam draufschauen.";
+      } else if(jahreBis<=12){
+        vh.className="verdict close";
+        h.innerHTML="Nur noch <span>"+jahreBis+"</span> Jahre bis zur regulären Rente.";
+        p.innerHTML="Die entscheidende Phase: Jetzt Lücken schließen, Kosten senken und die Auszahlung planen. Dafür ist es nie zu spät — aber jeder Monat zählt.";
+      } else {
+        vh.className="verdict win";
+        h.innerHTML="Noch <span>"+jahreBis+"</span> Jahre bis zur regulären Rente.";
+        p.innerHTML="Genug Zeit, um mit dem richtigen Baustein eine spürbare Rentenlücke zu schließen — je früher du startest, desto stärker arbeitet der Zinseszins für dich.";
+      }
+    }
+    [yearEl,monthEl,yearsEl].forEach(function(el){ el.addEventListener("input",calc); el.addEventListener("change",calc); });
+    recompute.push(calc);
+    calc();
+  })();
+
+  /* ================================================================
+     RECHNER 2 — RIESTER vs ALTERSVORSORGEDEPOT
+     ================================================================ */
+  (function(){
+    var rate=document.getElementById("r2-rate"), rateVal=document.getElementById("r2-rate-val");
+    var years=document.getElementById("r2-years"), yearsVal=document.getElementById("r2-years-val");
+    var income=document.getElementById("r2-income"), incomeVal=document.getElementById("r2-income-val");
+    var kidsInp=document.getElementById("r2-kids");
+    var etf=document.getElementById("r2-etf"), etfVal=document.getElementById("r2-etf-val");
+    var riesterR=document.getElementById("r2-riester-r"), riesterRVal=document.getElementById("r2-riester-r-val");
+    var u25=0;
+    var kids=0;
+
+    // stepper
+    document.getElementById("r2-kids-plus").addEventListener("click",function(){ kids=Math.min(6,kids+1); kidsInp.value=kids; calc(); });
+    document.getElementById("r2-kids-minus").addEventListener("click",function(){ kids=Math.max(0,kids-1); kidsInp.value=kids; calc(); });
+    // segmented u25
+    var u25no=document.getElementById("r2-u25-no"), u25yes=document.getElementById("r2-u25-yes");
+    u25no.addEventListener("click",function(){ u25=0; u25no.classList.add("on"); u25yes.classList.remove("on"); calc(); });
+    u25yes.addEventListener("click",function(){ u25=1; u25yes.classList.add("on"); u25no.classList.remove("on"); calc(); });
+
+    function futureValue(yearlyTotal, r, n){ // annuity due, annual compounding
+      var cap=0; for(var i=0;i<n;i++){ cap=(cap+yearlyTotal)*(1+r); } return cap;
+    }
+
+    function calc(){
+      var monthly=parseInt(rate.value,10);
+      var n=parseInt(years.value,10);
+      var inc=parseInt(income.value,10);
+      var etfR=parseFloat(etf.value)/100;
+      var riesR=parseFloat(riesterR.value)/100;
+      var annualOwn=monthly*12;
+
+      rateVal.textContent=deDE.format(monthly)+" €";
+      yearsVal.textContent=n+" J.";
+      incomeVal.textContent=deDE.format(inc)+" €";
+      etfVal.textContent=parseFloat(etf.value).toLocaleString("de-DE",{minimumFractionDigits:1})+" %";
+      riesterRVal.textContent=parseFloat(riesterR.value).toLocaleString("de-DE",{minimumFractionDigits:1})+" %";
+
+      /* ----- ALTERSVORSORGEDEPOT zulagen (annual) ----- */
+      // Grundzulage: 50ct/€ up to 360, then 25ct/€ up to 1800; cap 540
+      var g1=Math.min(annualOwn,360)*0.5;
+      var g2=Math.min(Math.max(annualOwn-360,0),1440)*0.25;
+      var avdGrund=Math.min(540, g1+g2);
+      // Kinderzulage 300€/Kind, full from >=25€/month (=300/yr)
+      var avdKids=(monthly>=25)? kids*300 : kids*300*(annualOwn/300); // proportional if under 25/mo (rare)
+      avdKids=Math.min(avdKids, kids*300);
+      var avdZ=avdGrund+avdKids;
+      var avdYearly=annualOwn+avdZ;
+      var avdCostDrag=0.005; // 0.5% depot cost
+      var avdNet=Math.max(0, etfR-avdCostDrag);
+      var avdCap=futureValue(avdYearly, avdNet, n);
+      var avdBonus=(u25? 200:0);
+      if(avdBonus){ avdCap += avdBonus*Math.pow(1+avdNet, n); } // one-time, grown
+      var avdFoerderTotal=avdZ*n + avdBonus;
+
+      /* ----- RIESTER zulagen (annual) ----- */
+      var riesGrundFull=175;
+      var riesKidsFull=kids*300; // assume born 2008+
+      var zulagenFull=riesGrundFull+riesKidsFull;
+      // Mindesteigenbeitrag = 4% of gross - zulagen, min 60, cap base 2100
+      var mindest=Math.max(60, Math.min(inc,175000)*0.04 - zulagenFull);
+      mindest=Math.min(mindest, 2100 - zulagenFull); if(mindest<60) mindest=60;
+      // proportional funding factor
+      var factor=Math.max(0, Math.min(1, annualOwn/Math.max(mindest,1)));
+      var riesGrund=riesGrundFull*factor;
+      var riesKids=riesKidsFull*factor;
+      var riesZ=riesGrund+riesKids;
+      var riesYearly=annualOwn+riesZ;
+      var riesCap=futureValue(riesYearly, riesR, n);
+      var riesFoerderTotal=riesZ*n;
+
+      /* ----- outputs ----- */
+      var ownTotal=annualOwn*n;
+      var diff=avdCap-riesCap;
+
+      document.getElementById("r2-avd-total").innerHTML="≈ "+fmtEuro(avdCap);
+      document.getElementById("r2-ries-total").innerHTML="≈ "+fmtEuro(riesCap);
+      document.getElementById("r2-avd-foerder").textContent=fmtEuro(avdFoerderTotal);
+      document.getElementById("r2-ries-foerder").textContent=fmtEuro(riesFoerderTotal);
+
+      /* ----- bars (scale to the larger end capital) ----- */
+      var maxCap=Math.max(avdCap, riesCap, 1);
+      function setBar(prefix, own, fund, cap){
+        var growth=Math.max(0, cap-own-fund);
+        var scale=cap/maxCap; // width of whole bar relative to max
+        var ownW=(own/cap)*100*scale;
+        var fundW=(fund/cap)*100*scale;
+        var grW=(growth/cap)*100*scale;
+        var eOwn=document.getElementById(prefix+"-own");
+        var eFund=document.getElementById(prefix+"-fund");
+        var eGr=document.getElementById(prefix+"-growth");
+        eOwn.style.width=ownW+"%"; eFund.style.width=fundW+"%"; eGr.style.width=grW+"%";
+        eOwn.querySelector(".st").textContent = ownW>14? fmtEuro(own):"";
+        eFund.querySelector(".st").textContent = fundW>14? fmtEuro(fund):"";
+        eGr.querySelector(".st").textContent = grW>16? fmtEuro(growth):"";
+        [eOwn,eFund,eGr].forEach(function(s){ s.classList.add("show"); });
+      }
+      setBar("r2-avd", ownTotal, avdFoerderTotal, avdCap);
+      setBar("r2-ries", ownTotal, riesFoerderTotal, riesCap);
+
+      /* ----- verdict ----- */
+      var v=document.getElementById("r2-verdict"), vh=document.getElementById("r2-verdict-h"), vp=document.getElementById("r2-verdict-p"), vico=v.querySelector(".v-ico");
+      if(diff >= 0){
+        var ratio = riesCap>0 ? avdCap/riesCap : 2;
+        v.className="verdict win";
+        vico.innerHTML='<path d="M20 6L9 17l-5-5"/>';
+        if(ratio>=1.6){
+          vh.textContent="Klarer Fall: Das Altersvorsorgedepot lohnt sich für dich deutlich.";
+        } else {
+          vh.textContent="Das Altersvorsorgedepot liegt bei dir vorn.";
+        }
+        vp.innerHTML="Mit deinen Angaben stünden am Ende rund <b>"+fmtEuro(diff)+"</b> mehr zur Verfügung als im alten Riester-Vertrag — vor allem durch niedrigere Kosten und höhere Renditechancen.";
+      } else {
+        v.className="verdict close";
+        vico.innerHTML='<circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/>';
+        vh.textContent="Knapp: Hier könnte sich der alte Riester noch lohnen.";
+        vp.innerHTML="Bei kleinem Beitrag und mehreren Kindern ziehen die Riester-Zulagen stark — rund <b>"+fmtEuro(Math.abs(diff))+"</b> Vorsprung. Genau so ein Fall gehört einzeln durchgerechnet. Lass uns draufschauen.";
+      }
+    }
+
+    [rate,years,income,etf,riesterR].forEach(function(el){ el.addEventListener("input",calc); el.addEventListener("change",calc); });
+    recompute.push(calc);
+    calc();
+  })();
+
+})();
+</script>
+</body>
+</html>
