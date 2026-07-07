@@ -398,8 +398,19 @@ form.f{margin-top:26px;display:grid;gap:16px}
   .f-row{grid-template-columns:1fr}.values{grid-template-columns:1fr}
   .steps__grid{grid-template-columns:1fr}
   .foot__top{grid-template-columns:1fr}
-  .hero__trust{gap:8px 18px}
   .marks span{display:none}
+  /* ---- hero mobile ---- */
+  .hero{align-items:flex-end}
+  .hero__content{width:100%;max-width:100%;padding:0 20px 30px}
+  .hero__eyebrow{font-size:.56rem;letter-spacing:.12em;margin-bottom:15px;flex-wrap:wrap;max-width:100%}
+  .eb-coord{display:none}
+  .hero h1{font-size:clamp(2.3rem,10.4vw,2.85rem);line-height:1.03;letter-spacing:-.02em;max-width:100%}
+  .hero__sub{font-size:1rem;line-height:1.55;margin-top:16px;max-width:100%;overflow-wrap:break-word}
+  .hero__cta{flex-direction:column;align-items:stretch;gap:11px;margin-top:22px}
+  .hero__cta .btn{width:100%;justify-content:center}
+  .hero__trust{margin-top:20px;padding-top:16px;gap:7px 16px}
+  .hero__trust .t{font-size:.78rem}
+  .scrollcue{display:none}
 }
 .no-js .reveal,.no-js .clip{opacity:1;transform:none;clip-path:none}
 .no-js .hero h1 .ln>span{transform:none;opacity:1}
@@ -451,7 +462,7 @@ form.f{margin-top:26px;display:grid;gap:16px}
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="leaves" aria-hidden="true"></div>
   <div class="hero__content">
-    <span class="eyebrow on-dark hero__eyebrow">Garten- &amp; Landschaftsbau · Baden-Baden · 48.76°&nbsp;N</span>
+    <span class="eyebrow on-dark hero__eyebrow">Garten- &amp; Landschaftsbau · Baden-Baden<span class="eb-coord"> · 48.76°&nbsp;N</span></span>
     <h1>
       <span class="ln"><span>Ihr Garten in</span></span>
       <span class="ln"><span>besten <span class="serif-i">Händen.</span></span></span>
