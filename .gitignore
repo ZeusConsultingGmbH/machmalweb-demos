@@ -1,0 +1,14 @@
+# Dieses Repo ist ÖFFENTLICH — was hier landet, sieht jeder.
+# Secrets gehören nie hinein (Regel seit 16.07.2026). Zusätzlich sind auf GitHub
+# Secret Scanning + Push Protection aktiv: ein Push mit erkanntem Secret wird
+# abgelehnt, statt still online zu gehen.
+.env
+.env.*
+!.env.example
+
+# macOS-Artefakte (26 Stück waren versehentlich eingecheckt)
+.DS_Store
+
+# Build-/Deploy-Artefakte
+node_modules/
+.vercel/
