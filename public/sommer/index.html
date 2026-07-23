@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sommer im Schlossgarten · Durlach</title>
+<meta name="description" content="Sommer im Schlossgarten – lange, laue Sommerabende unter altem Baumbestand im historischen Schlossgarten von Durlach. Pizza, Flammkuchen, Sommerdrinks." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&family=Sacramento&family=Pinyon+Script&family=Parisienne&display=swap" rel="stylesheet" />
+<style>
+:root{
+  /* warm, muted earth palette */
+  --cream:        #ece1d7;
+  --cream-deep:   #e3d3c7;
+  --parchment:    #f3ebe2;
+  --rose:         #c79688;
+  --rose-soft:    #d7aa9f;
+  --mauve:        #9a8197;
+  --mauve-soft:   #b39db0;
+  --terracotta:   #b4663f;
+  --terracotta-d: #9a5230;
+  --petrol:       #587b78;
+  --petrol-deep:  #41615e;
+  --sage:         #8a9a7b;
+  --coral:        #d67a5c;
+  --gold:         #c79a55;
+  --ink:          #463730;
+  --ink-soft:     #6a564c;
+  --line:         rgba(120,86,70,.28);
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --display: "Marcellus", "Cormorant Garamond", serif;
+  --script: "Sacramento", cursive;
+  --script-alt: "Pinyon Script", cursive;
+  --logo: "Parisienne", cursive;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.7;
+  font-size:20px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+
+/* ---------- ambient watercolor background ---------- */
+.atmos{position:fixed;inset:0;z-index:-2;overflow:hidden;}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;mix-blend-mode:multiply;}
+.b1{width:46vw;height:46vw;left:-12vw;top:-10vw;background:radial-gradient(circle,var(--rose-soft),transparent 70%);}
+.b2{width:40vw;height:40vw;right:-10vw;top:18vh;background:radial-gradient(circle,var(--mauve-soft),transparent 70%);}
+.b3{width:48vw;height:48vw;left:8vw;top:120vh;background:radial-gradient(circle,var(--petrol),transparent 72%);opacity:.32;}
+.b4{width:44vw;height:44vw;right:-8vw;top:200vh;background:radial-gradient(circle,var(--terracotta),transparent 72%);opacity:.3;}
+.b5{width:50vw;height:50vw;left:-10vw;top:300vh;background:radial-gradient(circle,var(--sage),transparent 72%);opacity:.3;}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;
+  align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(1.2rem,4vw,3.4rem);
+  transition:background .6s ease, padding .6s ease, box-shadow .6s ease;}
+nav.scrolled{background:rgba(243,235,226,.82);backdrop-filter:blur(10px);
+  box-shadow:0 6px 30px -22px rgba(70,55,48,.6);padding:.6rem clamp(1.2rem,4vw,3.4rem);}
+.nav-brand{font-family:var(--display);font-size:1.05rem;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--terracotta);line-height:1;}
+.nav-links{display:flex;gap:clamp(.8rem,2.2vw,2rem);list-style:none;}
+.nav-links a{font-family:var(--display);text-decoration:none;color:var(--ink-soft);
+  font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;position:relative;transition:color .4s;}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
+  background:var(--terracotta);transition:width .5s ease;}
+.nav-links a:hover{color:var(--terracotta);}
+.nav-links a:hover::after{width:100%;}
+.nav-reserve{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;
+  color:var(--parchment);background:var(--terracotta);padding:.55rem 1.15rem;border-radius:40px;
+  border:1px solid var(--terracotta);transition:all .5s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 12px 26px -16px var(--terracotta);}
+.nav-reserve svg{width:15px;height:15px;}
+.nav-reserve:hover{background:var(--terracotta-d);transform:translateY(-2px);}
+@media(max-width:720px){.nav-links{display:none;}}
+@media(max-width:720px){.nav-reserve span{display:none;}.nav-reserve{padding:.55rem;border-radius:50%;}}
+
+/* ---------- reveal animations ---------- */
+.reveal{opacity:0;transform:translateY(34px);
+  transition:opacity 1.5s cubic-bezier(.2,.7,.2,1), transform 1.5s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.15s;}
+.reveal.d2{transition-delay:.3s;}
+.reveal.d3{transition-delay:.45s;}
+.reveal.d4{transition-delay:.6s;}
+.bloom{opacity:0;transform:scale(.86);transform-origin:center;
+  transition:opacity 1.7s ease, transform 1.7s cubic-bezier(.2,.8,.2,1);}
+.bloom.in{opacity:1;transform:scale(1);}
+.drift{opacity:0;transform:translateX(-40px) rotate(-4deg);
+  transition:opacity 1.8s ease, transform 1.8s cubic-bezier(.2,.7,.2,1);}
+.drift.right{transform:translateX(40px) rotate(4deg);}
+.drift.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.bloom,.drift{opacity:1!important;transform:none!important;}
+}
+
+/* ---------- shared ---------- */
+section{position:relative;padding:clamp(5rem,12vh,9rem) clamp(1.4rem,6vw,4rem);}
+.wrap{max-width:1140px;margin:0 auto;}
+.eyebrow{font-family:var(--script);color:var(--terracotta);
+  font-size:clamp(2rem,4vw,3rem);line-height:1;margin-bottom:.3rem;}
+.eyebrow-sm{font-family:var(--display);text-transform:uppercase;letter-spacing:.32em;
+  font-size:.78rem;color:var(--petrol-deep);margin-bottom:1.1rem;}
+h2{font-family:var(--display);font-weight:400;line-height:1.08;
+  font-size:clamp(2.2rem,5.5vw,4rem);color:var(--ink);margin-bottom:1.4rem;}
+.lead{font-size:clamp(1.15rem,2.3vw,1.5rem);color:var(--ink-soft);max-width:46ch;font-weight:400;}
+.lead.center{margin-inline:auto;text-align:center;}
+.section-head{text-align:center;margin-bottom:clamp(2.5rem,6vh,4.5rem);}
+.divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.6rem auto;max-width:340px;}
+.divider span{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+.divider svg{width:26px;height:26px;color:var(--terracotta);flex:none;}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding-top:6rem;padding-bottom:5rem;overflow:hidden;}
+.hero-ring{position:relative;width:clamp(190px,30vw,300px);margin:0 auto 1.6rem;}
+.hero-ring img{border-radius:50%;box-shadow:0 30px 70px -38px rgba(70,55,48,.65);
+  animation:floaty 9s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero .invite{font-family:var(--logo);color:var(--terracotta);
+  font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1;margin-bottom:.4rem;}
+.hero h1{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.16em;
+  font-size:clamp(2rem,6vw,4.2rem);line-height:1.12;color:var(--ink);}
+.hero h1 .em{font-family:var(--display);color:var(--terracotta);font-size:1em;display:block;
+  text-transform:uppercase;letter-spacing:.16em;margin-top:.15rem;line-height:1.1;}
+.hero .place{font-family:var(--display);text-transform:uppercase;letter-spacing:.42em;
+  font-size:clamp(.8rem,2vw,1.05rem);color:var(--petrol-deep);margin-top:1.5rem;}
+.hero .place::before,.hero .place::after{content:"·";margin:0 .9em;color:var(--terracotta);}
+.hero-cta{margin-top:2.2rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;}
+.hero-cta-note{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;
+  font-size:.68rem;color:var(--ink-soft);}
+.scroll-cue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--ink-soft);}
+.scroll-cue span{font-family:var(--display);letter-spacing:.28em;text-transform:uppercase;font-size:.65rem;}
+.scroll-cue .dot{width:1px;height:46px;background:linear-gradient(var(--terracotta),transparent);
+  animation:cue 2.4s ease-in-out infinite;transform-origin:top;}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* floating leaves in hero */
+.leaf-float{position:absolute;opacity:.55;color:var(--mauve);pointer-events:none;}
+.leaf-float.f1{top:14%;left:8%;width:80px;animation:sway 11s ease-in-out infinite;color:var(--sage);}
+.leaf-float.f2{top:22%;right:9%;width:70px;animation:sway 13s ease-in-out infinite reverse;color:var(--rose);}
+.leaf-float.f3{bottom:20%;left:12%;width:60px;animation:sway 15s ease-in-out infinite;color:var(--mauve);}
+.leaf-float.f4{bottom:26%;right:13%;width:66px;animation:sway 12s ease-in-out infinite reverse;color:var(--terracotta);opacity:.45;}
+@keyframes sway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(8deg)}}
+@media(max-width:720px){.leaf-float{display:none;}}
+
+/* ---------- ARRIVAL ---------- */
+.arrival{text-align:center;}
+.arrival .big{font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.6rem,4.4vw,2.9rem);line-height:1.45;max-width:24ch;margin:0 auto;color:var(--ink);}
+.arrival .big em{font-style:normal;color:var(--terracotta);}
+
+/* ---------- THE PLACE ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center;}
+@media(max-width:860px){.split{grid-template-columns:1fr;}}
+.place-card{position:relative;border-radius:200px 200px 200px 200px/260px 260px 260px 260px;
+  overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -50px rgba(70,55,48,.7);}
+.place-card .scene{position:absolute;inset:0;}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.feature-list li{display:flex;gap:1rem;align-items:flex-start;}
+.feature-list svg{width:30px;height:30px;flex:none;color:var(--petrol);margin-top:4px;}
+.feature-list h4{font-family:var(--display);font-size:1.15rem;font-weight:400;color:var(--ink);margin-bottom:.1rem;}
+.feature-list p{font-size:1rem;color:var(--ink-soft);}
+
+/* ---------- MENU ---------- */
+.menu-tabs{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:3rem;}
+.menu-tabs button{font-family:var(--display);letter-spacing:.16em;text-transform:uppercase;
+  font-size:.74rem;padding:.7rem 1.5rem;border:1px solid var(--line);background:transparent;
+  color:var(--ink-soft);border-radius:40px;cursor:pointer;transition:all .5s ease;}
+.menu-tabs button.active{background:var(--terracotta);color:var(--parchment);border-color:var(--terracotta);
+  box-shadow:0 12px 28px -16px var(--terracotta);}
+.menu-panel{display:none;}
+.menu-panel.active{display:block;animation:fadeUp 1s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.dish-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem clamp(2rem,5vw,4rem);}
+@media(max-width:760px){.dish-grid{grid-template-columns:1fr;}}
+.dish{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:baseline;
+  padding:1.1rem 0;border-bottom:1px dashed var(--line);}
+.dish .name{font-family:var(--display);font-size:1.28rem;color:var(--ink);font-weight:400;}
+.dish .tag{font-family:var(--serif);font-style:italic;font-size:.8rem;color:var(--petrol);margin-left:.5rem;}
+.dish .price{font-family:var(--display);font-size:1.18rem;color:var(--terracotta);white-space:nowrap;}
+.dish .desc{grid-column:1/-1;font-size:.98rem;color:var(--ink-soft);max-width:42ch;}
+.menu-note{text-align:center;font-style:italic;color:var(--ink-soft);margin-top:2.4rem;font-size:.95rem;}
+
+/* drinks list compact */
+.drink-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);}
+@media(max-width:760px){.drink-cols{grid-template-columns:1fr;}}
+.drink-block h3{font-family:var(--script);color:var(--terracotta);font-size:2.1rem;line-height:1;margin-bottom:1rem;}
+.drink-row{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.55rem 0;border-bottom:1px dotted var(--line);}
+.drink-row .d-name{font-family:var(--serif);font-size:1.08rem;color:var(--ink);}
+.drink-row .d-name small{display:block;font-style:italic;font-size:.82rem;color:var(--ink-soft);max-width:34ch;}
+.drink-row .d-price{font-family:var(--display);color:var(--terracotta);white-space:nowrap;font-size:1rem;}
+
+/* signature drinks cards */
+.sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1rem;}
+@media(max-width:860px){.sig-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto;}}
+.sig-card{background:rgba(243,235,226,.55);border:1px solid var(--line);border-radius:18px;
+  padding:1.8rem 1.6rem;text-align:center;backdrop-filter:blur(4px);transition:transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .7s;}
+.sig-card:hover{transform:translateY(-8px);box-shadow:0 30px 50px -34px rgba(70,55,48,.6);}
+.sig-card .ico{width:44px;height:44px;margin:0 auto 1rem;color:var(--terracotta);}
+.sig-card h4{font-family:var(--script);font-size:2rem;line-height:1;color:var(--ink);margin-bottom:.6rem;}
+.sig-card p{font-size:.96rem;color:var(--ink-soft);margin-bottom:.8rem;}
+.sig-card .price{font-family:var(--display);color:var(--terracotta);font-size:1.1rem;}
+
+/* ---------- PIZZA TUESDAY ---------- */
+#pizza-tuesday{padding-top:0;}
+.ptuesday{position:relative;overflow:hidden;border-radius:30px;text-align:center;
+  padding:clamp(2.6rem,7vw,4.6rem) clamp(1.4rem,5vw,3.4rem);
+  background:linear-gradient(135deg,var(--coral),var(--terracotta) 55%,var(--terracotta-d));
+  color:var(--parchment);box-shadow:0 50px 90px -55px rgba(154,82,48,.85);}
+.ptuesday::after{content:"";position:absolute;inset:0;opacity:.1;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.pt-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;}
+.pt-leaf{position:absolute;color:rgba(243,235,226,.22);pointer-events:none;z-index:1;}
+.pt-leaf.one{width:160px;top:-20px;left:-30px;transform:rotate(20deg);}
+.pt-leaf.two{width:140px;bottom:-30px;right:-20px;transform:rotate(-12deg);}
+.pt-eyebrow{font-family:var(--script);font-size:clamp(2rem,4.5vw,2.8rem);line-height:1;
+  color:#f7e6cf;margin-bottom:.5rem;}
+.ptuesday h2{color:var(--parchment);font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1.1rem;}
+.pt-amp{display:block;font-family:var(--serif);font-style:italic;text-transform:none;
+  font-size:.5em;letter-spacing:0;color:#f7e6cf;margin-top:.3rem;}
+.pt-lead{font-size:clamp(1.05rem,2.2vw,1.3rem);color:#fbeede;max-width:46ch;margin:0 auto 1.8rem;}
+.pt-lead strong{font-weight:500;color:#fff;}
+.pt-actions{display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.ptuesday .btn-primary{background:var(--parchment);color:var(--terracotta-d);border-color:var(--parchment);
+  box-shadow:0 18px 36px -20px rgba(0,0,0,.4);}
+.ptuesday .btn-primary:hover{background:#fff;transform:translateY(-4px);}
+.pt-link{font-family:var(--display);text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;
+  color:#f7e6cf;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .4s;}
+.pt-link:hover{border-color:#f7e6cf;}
+
+/* ---------- EVENING (quote band) ---------- */
+.evening{text-align:center;color:var(--parchment);overflow:hidden;}
+.evening::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(160deg,var(--petrol-deep),var(--mauve) 55%,var(--terracotta-d));opacity:.94;}
+.evening .grain-dark{position:absolute;inset:0;z-index:-1;opacity:.12;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.evening .eyebrow{color:#f0d9c8;}
+.evening h2{color:var(--parchment);}
+.evening .q{font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.5rem,4vw,2.7rem);line-height:1.5;max-width:24ch;margin:0 auto;}
+.evening .sig{font-family:var(--script);font-size:clamp(2.4rem,5vw,3.4rem);color:#f3d3b8;margin-top:1.5rem;}
+
+/* ---------- CLOSING / CTA ---------- */
+.closing{text-align:center;}
+.cta-card{max-width:760px;margin:0 auto;background:rgba(243,235,226,.7);
+  border:1px solid var(--line);border-radius:26px;padding:clamp(2.4rem,6vw,4rem);
+  box-shadow:0 50px 90px -60px rgba(70,55,48,.7);backdrop-filter:blur(6px);position:relative;}
+.cta-card .invite{font-family:var(--script);color:var(--terracotta);font-size:clamp(2.6rem,6vw,4rem);line-height:1;}
+.btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+.btn{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:.82rem;
+  padding:1rem 2.2rem;border-radius:40px;text-decoration:none;transition:all .5s cubic-bezier(.2,.8,.2,1);
+  display:inline-flex;align-items:center;gap:.6rem;cursor:pointer;border:1px solid var(--terracotta);}
+.btn svg{width:18px;height:18px;}
+.btn-primary{background:var(--terracotta);color:var(--parchment);box-shadow:0 18px 36px -20px var(--terracotta);}
+.btn-primary:hover{background:var(--terracotta-d);transform:translateY(-4px);box-shadow:0 26px 44px -22px var(--terracotta);}
+.btn-ghost{background:transparent;color:var(--terracotta);}
+.btn-ghost:hover{background:rgba(180,102,63,.1);transform:translateY(-4px);}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr;gap:1.6rem;}}
+.info-grid .ico{width:34px;height:34px;color:var(--petrol);margin:0 auto .7rem;}
+.info-grid h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;
+  font-size:.74rem;color:var(--petrol-deep);margin-bottom:.5rem;}
+.info-grid p{font-size:1.02rem;color:var(--ink);}
+.info-grid a{color:var(--terracotta);text-decoration:none;}
+.info-grid a:hover{text-decoration:underline;}
+
+footer{text-align:center;padding:3rem 1.5rem 4rem;color:var(--ink-soft);}
+footer .fbrand{font-family:var(--display);font-size:1.5rem;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--terracotta);line-height:1.2;}
+footer p{font-size:.85rem;margin-top:.5rem;}
+
+/* section corner flourishes */
+.corner{position:absolute;width:clamp(120px,18vw,230px);opacity:.5;pointer-events:none;z-index:0;}
+.corner.tl{top:0;left:0;}
+.corner.tr{top:0;right:0;transform:scaleX(-1);}
+.corner.bl{bottom:0;left:0;transform:scaleY(-1);}
+.corner.br{bottom:0;right:0;transform:scale(-1,-1);}
+section > .wrap{position:relative;z-index:1;}
+</style>
+</head>
+<body>
+
+<!-- ambient watercolor wash -->
+<div class="atmos" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+  <div class="blob b5"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- reusable SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sprig" viewBox="0 0 100 100">
+    <path d="M50 95 C50 70 50 40 50 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <g fill="currentColor" opacity=".9">
+      <path d="M50 78 C36 74 28 64 26 52 C40 54 48 64 50 78Z"/>
+      <path d="M50 66 C64 62 72 52 74 40 C60 42 52 52 50 66Z"/>
+      <path d="M50 52 C38 48 31 39 30 28 C42 30 49 40 50 52Z"/>
+      <path d="M50 40 C62 36 69 27 70 16 C58 18 51 28 50 40Z"/>
+      <path d="M50 28 C42 24 37 17 36 9 C45 11 49 19 50 28Z"/>
+    </g>
+  </symbol>
+  <symbol id="bloom6" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <ellipse cx="50" cy="24" rx="11" ry="18"/>
+      <ellipse cx="50" cy="76" rx="11" ry="18"/>
+      <ellipse cx="24" cy="50" rx="18" ry="11"/>
+      <ellipse cx="76" cy="50" rx="18" ry="11"/>
+      <ellipse cx="32" cy="32" rx="13" ry="15" transform="rotate(45 32 32)"/>
+      <ellipse cx="68" cy="68" rx="13" ry="15" transform="rotate(45 68 68)"/>
+      <ellipse cx="68" cy="32" rx="13" ry="15" transform="rotate(-45 68 32)"/>
+      <ellipse cx="32" cy="68" rx="13" ry="15" transform="rotate(-45 32 68)"/>
+    </g>
+    <circle cx="50" cy="50" r="9" fill="var(--gold)"/>
+  </symbol>
+  <symbol id="leaf1" viewBox="0 0 100 100">
+    <path d="M20 80 C20 40 50 12 84 16 C84 56 54 84 20 80Z" fill="currentColor"/>
+    <path d="M26 74 C44 56 64 38 80 22" fill="none" stroke="var(--cream)" stroke-width="2" opacity=".5"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-brand" href="#top">Sommer im Schlossgarten</a>
+  <ul class="nav-links">
+    <li><a href="#ort">Der Ort</a></li>
+    <li><a href="#kueche">Die Küche</a></li>
+    <li><a href="#getraenke">Die Getränke</a></li>
+    <li><a href="#besuch">Besuch</a></li>
+  </ul>
+  <a class="nav-reserve" href="tel:+4915738399567">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    <span>Reservieren</span>
+  </a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <svg class="leaf-float f1"><use href="#sprig"/></svg>
+  <svg class="leaf-float f2"><use href="#leaf1"/></svg>
+  <svg class="leaf-float f3"><use href="#sprig"/></svg>
+  <svg class="leaf-float f4"><use href="#leaf1"/></svg>
+
+  <div class="hero-ring bloom in">
+    <img src="assets/logo.png" alt="Sommer im Schlossgarten – Logo" />
+  </div>
+  <p class="invite reveal in">Du bist eingeladen</p>
+  <h1 class="reveal in d1">Sommer<span class="em">im Schlossgarten</span></h1>
+  <p class="place reveal in d2">Durlach · unter altem Baumbestand</p>
+
+  <div class="hero-cta reveal in d3">
+    <a class="btn btn-primary" href="tel:+4915738399567">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      Tisch reservieren
+    </a>
+    <span class="hero-cta-note">Reservierung nur telefonisch · 01573 8399567</span>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Tritt ein</span>
+    <div class="dot"></div>
+  </div>
+</header>
+
+<!-- ARRIVAL -->
+<section class="arrival" id="ankunft">
+  <div class="wrap">
+    <p class="eyebrow reveal">ankommen</p>
+    <p class="big reveal d1">Ein Schritt von der belebten Straße – und plötzlich liegt ein
+    <em>verborgener, grüner Innenhof</em> vor dir. Die Geräusche der Stadt verklingen,
+    Licht fällt durch altes Laub, und über allem liegt eine leise Vorfreude.</p>
+    <div class="divider reveal d2">
+      <span></span><svg><use href="#bloom6"/></svg><span></span>
+    </div>
+    <p class="lead center reveal d3">Hier wird nichts gehetzt. Hier atmet alles.
+    Willkommen an einem Ort für lange, laue Sommerabende.</p>
+  </div>
+</section>
+
+<!-- THE PLACE -->
+<section id="ort">
+  <svg class="corner tl"><use href="#sprig"/></svg>
+  <svg class="corner br"><use href="#sprig"/></svg>
+  <div class="wrap">
+    <div class="split">
+      <div class="place-card bloom">
+        <svg class="scene" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e9cdb6"/><stop offset="1" stop-color="#cf9f8d"/>
+            </linearGradient>
+            <radialGradient id="sun" cx="32%" cy="22%" r="55%">
+              <stop offset="0" stop-color="#f6e3c4" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#f6e3c4" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#sky)"/>
+          <rect width="400" height="500" fill="url(#sun)"/>
+          <!-- wall -->
+          <rect y="300" width="400" height="200" fill="#b98a6a" opacity=".55"/>
+          <!-- old trees -->
+          <g fill="#5f7a63" opacity=".85">
+            <ellipse cx="90" cy="170" rx="120" ry="140"/>
+            <ellipse cx="300" cy="140" rx="140" ry="150"/>
+            <ellipse cx="200" cy="220" rx="150" ry="120" opacity=".7"/>
+          </g>
+          <g fill="#445e4b" opacity=".55">
+            <ellipse cx="120" cy="120" rx="70" ry="80"/>
+            <ellipse cx="280" cy="100" rx="80" ry="80"/>
+          </g>
+          <!-- trunk -->
+          <rect x="190" y="240" width="22" height="120" rx="8" fill="#7a5740" opacity=".8"/>
+          <!-- string lights -->
+          <path d="M0 90 Q200 150 400 80" fill="none" stroke="#5a4636" stroke-width="2" opacity=".5"/>
+          <g fill="#f5dca0">
+            <circle cx="60" cy="116" r="4"/><circle cx="130" cy="132" r="4"/>
+            <circle cx="200" cy="138" r="4"/><circle cx="270" cy="128" r="4"/><circle cx="340" cy="108" r="4"/>
+          </g>
+          <!-- little tables -->
+          <g opacity=".9">
+            <ellipse cx="110" cy="430" rx="40" ry="14" fill="#e7d6c4"/>
+            <rect x="106" y="430" width="8" height="40" fill="#9a7256"/>
+            <ellipse cx="290" cy="450" rx="46" ry="16" fill="#efe0cf"/>
+            <rect x="286" y="450" width="8" height="40" fill="#9a7256"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow reveal">der ort</p>
+        <h2 class="reveal d1">Ein ummauerter<br>Garten voller Licht</h2>
+        <p class="lead reveal d2">Im historischen Schlossgarten von Durlach, unter Bäumen,
+        die schon Generationen Schatten geschenkt haben. Sonnengesprenkeltes Licht am späten
+        Nachmittag, der gelassene Rhythmus eines südländischen Innenhofs.</p>
+        <ul class="feature-list">
+          <li class="drift"><svg><use href="#leaf1"/></svg>
+            <div><h4>Alter Baumbestand</h4><p>Kühler Schatten und sanftes Blätterrauschen über jedem Tisch.</p></div></li>
+          <li class="drift d1"><svg><use href="#bloom6"/></svg>
+            <div><h4>Lichterketten zur blauen Stunde</h4><p>Wenn die Sonne sinkt, beginnt der Garten warm zu leuchten.</p></div></li>
+          <li class="drift d2"><svg><use href="#sprig"/></svg>
+            <div><h4>Zeit, Raum und Ruhe</h4><p>Der stille Luxus, einfach zu bleiben, solange der Abend trägt.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE KITCHEN / MENU -->
+<section id="kueche">
+  <svg class="corner tr"><use href="#bloom6"/></svg>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">die küche</p>
+      <h2 class="reveal d1">Aus dem Holzofen, mit Liebe</h2>
+      <p class="lead center reveal d2">Knusprige Pizza und feiner Flammkuchen – ehrlich, handgemacht,
+      wie für Freunde gemacht. Geschrieben, als hätten wir sie dir persönlich notiert.</p>
+    </div>
+
+    <div class="menu-tabs reveal d2">
+      <button class="active" data-menu="pizza">Pizza</button>
+      <button data-menu="flamm">Flammkuchen</button>
+    </div>
+
+    <div class="menu-panel active" id="pizza">
+      <div class="dish-grid">
+        <div class="dish"><div class="name">Margherita</div><div class="price">9,00 €</div>
+          <div class="desc">Mit würziger Tomatensoße und feinem Mozzarella-Käse.</div></div>
+        <div class="dish"><div class="name">Prosciutto</div><div class="price">10,00 €</div>
+          <div class="desc">Mit saftigem Schinken und feinem Mozzarella-Käse.</div></div>
+        <div class="dish"><div class="name">Salame</div><div class="price">10,00 €</div>
+          <div class="desc">Mit herzhafter Salami und feinem Mozzarella-Käse.</div></div>
+        <div class="dish"><div class="name">Calabrese Piccante</div><div class="price">10,00 €</div>
+          <div class="desc">Mit scharfer Calabrese-Salami, Peperoni und feinem Mozzarella-Käse.</div></div>
+        <div class="dish"><div class="name">Verdure Grigliate<span class="tag">vegetarisch</span></div><div class="price">10,00 €</div>
+          <div class="desc">Mit gegrillter Paprika, Zucchini, Aubergine und feinem Mozzarella-Käse.</div></div>
+        <div class="dish"><div class="name">BBQ Pollo</div><div class="price">10,00 €</div>
+          <div class="desc">Mit marinierter Hähnchenbrust, pikanter BBQ-Sauce, roten Zwiebeln und Mozzarella.</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="flamm">
+      <div class="dish-grid">
+        <div class="dish"><div class="name">Elsässer Art</div><div class="price">9,50 €</div>
+          <div class="desc">Mit Crème fraîche, geräuchertem Speck & feinen Zwiebeln.</div></div>
+        <div class="dish"><div class="name">Wildlachs<span class="tag">mit Fisch</span></div><div class="price">10,00 €</div>
+          <div class="desc">Mit Crème fraîche, Wildlachs & frischem Lauch.</div></div>
+        <div class="dish"><div class="name">Vegan</div><div class="price">10,00 €</div>
+          <div class="desc">Mit würziger Kokoscrème, grünem Spargel, mariniertem Grünkohl & Tomaten.</div></div>
+        <div class="dish"><div class="name">Apfel & Zimt<span class="tag">süß</span></div><div class="price">9,00 €</div>
+          <div class="desc">Mit Crème fraîche, Fromage blanc, Apfel & Zimt.</div></div>
+      </div>
+    </div>
+
+    <p class="menu-note reveal">Alle Preise inkl. MwSt. · Allergene & Zusatzstoffe nennen wir dir gern vor Ort.</p>
+  </div>
+</section>
+
+<!-- PIZZA TUESDAY -->
+<section id="pizza-tuesday">
+  <div class="wrap">
+    <div class="ptuesday bloom">
+      <svg class="pt-leaf one"><use href="#sprig"/></svg>
+      <svg class="pt-leaf two"><use href="#leaf1"/></svg>
+      <div class="pt-inner">
+        <p class="pt-eyebrow reveal">Jeden Dienstag bei uns</p>
+        <h2 class="reveal d1">Pizza &amp; Aperol Spritz<br><span class="pt-amp">— der perfekte Match</span></h2>
+        <p class="pt-lead reveal d2">Wir sind beim <strong>Aperol Spritz Pizza Tuesday</strong> dabei:
+        knusprige Pizza aus dem Ofen, dazu ein eisgekühlter Aperol Spritz – das feste Genussritual
+        für laue Dienstagabende unter den Bäumen.</p>
+        <div class="pt-actions reveal d3">
+          <a class="btn btn-primary" href="tel:+4915738399567">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Dienstag-Tisch reservieren
+          </a>
+          <a class="pt-link" href="https://www.aperol.com/de-de/news-und-events/pizza-tuesday/" target="_blank" rel="noopener">
+            Mehr zur Aktion →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE DRINKS -->
+<section id="getraenke">
+  <svg class="corner bl"><use href="#sprig"/></svg>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">die getränke</p>
+      <h2 class="reveal d1">Etwas Prickelndes zum Abend</h2>
+      <p class="lead center reveal d2">Hausgemachte Sommerdrinks, Wein aus kleinen Gütern, kühles Hoepfner
+      vom Fass und Kaffee aus der Familienrösterei – jedes Glas ein kleiner Sommer.</p>
+    </div>
+
+    <!-- signature drinks -->
+    <div class="sig-grid">
+      <div class="sig-card bloom">
+        <svg class="ico"><use href="#bloom6"/></svg>
+        <h4>The Queensberry</h4>
+        <p>Black Gin, Holunderblütensirup & frische Limette, aufgegossen mit Prosecco und Minze.</p>
+        <div class="price">6,90 €</div>
+      </div>
+      <div class="sig-card bloom d1">
+        <svg class="ico"><use href="#sprig"/></svg>
+        <h4>Melon-Time</h4>
+        <p>Melonensirup mit Prosecco & Tonic, verfeinert mit frischer Melone.</p>
+        <div class="price">6,90 €</div>
+      </div>
+      <div class="sig-card bloom d2">
+        <svg class="ico"><use href="#leaf1"/></svg>
+        <h4>Hugo & Aperol</h4>
+        <p>Die Klassiker des Innenhofs – Aperol Sprizz, Hugo, Lillet Wild Berry.</p>
+        <div class="price">je 6,90 €</div>
+      </div>
+    </div>
+
+    <div class="divider reveal"><span></span><svg><use href="#bloom6"/></svg><span></span></div>
+
+    <div class="drink-cols">
+      <div class="drink-block reveal">
+        <h3>Vom Fass &amp; aus der Flasche</h3>
+        <div class="drink-row"><div class="d-name">Hoepfner Pils vom Fass <small>0,3 l / 0,5 l</small></div><div class="d-price">3,20 / 4,80 €</div></div>
+        <div class="drink-row"><div class="d-name">Hefeweizen vom Fass <small>0,3 l / 0,5 l</small></div><div class="d-price">3,20 / 4,80 €</div></div>
+        <div class="drink-row"><div class="d-name">Hoepfner hell / Radler <small>alkoholfreie Varianten erhältlich</small></div><div class="d-price">ab 3,20 €</div></div>
+        <div class="drink-row"><div class="d-name">Prosecco <small>0,1 l</small></div><div class="d-price">4,20 €</div></div>
+        <div class="drink-row"><div class="d-name">Virage Cuvée Brut Spumante <small>Flasche 0,75 l</small></div><div class="d-price">26,50 €</div></div>
+      </div>
+      <div class="drink-block reveal d1">
+        <h3>Weine aus kleinen Gütern</h3>
+        <div class="drink-row"><div class="d-name">Pinot Grigio delle Venezie <small>Birne, Kräuter, Zitrus · 0,2 l</small></div><div class="d-price">6,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Sauvignon Blanc, Weingut Meyer <small>Stachelbeere & Holunder · 0,2 l</small></div><div class="d-price">6,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Happy Hour Rosé, Provence <small>frische Beeren · 0,2 l</small></div><div class="d-price">6,20 €</div></div>
+        <div class="drink-row"><div class="d-name">Terre Avare Primitivo, Apulien <small>dunkle Beeren & Schokolade · 0,2 l</small></div><div class="d-price">6,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Sommerschorle <small>mit Limettenscheiben & Eis · 0,2 l</small></div><div class="d-price">4,00 €</div></div>
+      </div>
+      <div class="drink-block reveal">
+        <h3>Hausgemacht &amp; alkoholfrei</h3>
+        <div class="drink-row"><div class="d-name">Limonade Ingwer <small>Ingwer, Zitrone & Rohrzucker · 0,3 l</small></div><div class="d-price">3,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Limonade Limette <small>Limette & Rohrzucker · 0,3 l</small></div><div class="d-price">3,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Limonade Grapefruit <small>Grapefruit & Rohrzucker · 0,3 l</small></div><div class="d-price">3,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Eistee Zitrone <small>hausgemacht · 0,3 l</small></div><div class="d-price">3,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Naturtrüber Apfelsaft / Schorle <small>0,3 l</small></div><div class="d-price">ab 3,20 €</div></div>
+      </div>
+      <div class="drink-block reveal d1">
+        <h3>Kaffee &amp; Schokolade</h3>
+        <div class="drink-row"><div class="d-name">Cappuccino <small>Kronenkaffee aus der Familienrösterei</small></div><div class="d-price">3,20 €</div></div>
+        <div class="drink-row"><div class="d-name">Latte Macchiato</div><div class="d-price">3,60 €</div></div>
+        <div class="drink-row"><div class="d-name">Espresso</div><div class="d-price">2,60 €</div></div>
+        <div class="drink-row"><div class="d-name">Heiße Schokolade mit Sahne</div><div class="d-price">3,90 €</div></div>
+        <div class="drink-row"><div class="d-name">Eiskaffee / Affogato al caffé</div><div class="d-price">ab 4,50 €</div></div>
+      </div>
+    </div>
+    <p class="menu-note reveal">Alle Kaffeespezialitäten auch koffeinfrei · Preise in Euro inkl. MwSt. und Bedienung.</p>
+  </div>
+</section>
+
+<!-- EVENING -->
+<section class="evening" id="abend">
+  <div class="grain-dark" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">die blaue stunde</p>
+    <h2 class="reveal d1">Wenn der Garten zu leuchten beginnt</h2>
+    <p class="q reveal d2">„Die Lichter gehen an, die Gläser klingen leise, und über den
+    alten Bäumen verfärbt sich der Himmel. Ein Abend, der sich nimmt, so viel Zeit er braucht.“</p>
+    <p class="sig reveal d3">— laue Sommerabende, Durlach</p>
+  </div>
+</section>
+
+<!-- CLOSING / CTA -->
+<section class="closing" id="besuch">
+  <svg class="corner tl"><use href="#sprig"/></svg>
+  <svg class="corner tr"><use href="#sprig"/></svg>
+  <div class="wrap">
+    <div class="cta-card bloom">
+      <p class="invite">Wir sehen uns</p>
+      <h2 style="margin-top:.4rem">Komm einfach vorbei –<br>die Tür steht offen</h2>
+      <p class="lead center" style="margin-top:.4rem">Reservier dir einen Tisch unter den Bäumen,
+      oder lass dich treiben und schau spontan herein. Beides ist uns recht.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+4915738399567">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Tisch reservieren
+        </a>
+        <a class="btn btn-ghost" href="mailto:info@sommer-schlossgarten.de">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+          Schreib uns
+        </a>
+      </div>
+
+      <div class="info-grid">
+        <div class="reveal">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <h4>Öffnungszeiten</h4>
+          <p>Täglich bei schönem Wetter<br>ab 12.00 Uhr<br><em>kein fester Ruhetag</em></p>
+        </div>
+        <div class="reveal d1">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h4>Wo</h4>
+          <p>Schlossgarten Durlach<br>76227 Karlsruhe</p>
+        </div>
+        <div class="reveal d2">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <h4>Kontakt</h4>
+          <p><a href="tel:+4915738399567">01573 8399567</a><br><a href="mailto:info@sommer-schlossgarten.de">info@sommer-schlossgarten.de</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="fbrand">Sommer im Schlossgarten</p>
+  <p>Lange, laue Sommerabende im Schlossgarten Durlach · bis bald</p>
+</footer>
+
+<script>
+// nav background on scroll
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 60);
+}, {passive:true});
+
+// gentle reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal,.bloom,.drift').forEach(el => {
+  if(!el.classList.contains('in')) io.observe(el);
+});
+
+// menu tabs
+document.querySelectorAll('.menu-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.menu-tabs button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.menu).classList.add('active');
+  });
+});
+
+// subtle parallax drift for ambient blobs
+const blobs = document.querySelectorAll('.blob');
+addEventListener('scroll', () => {
+  const y = scrollY;
+  blobs.forEach((b,i) => { b.style.transform = `translateY(${y * (0.02 + i*0.015)}px)`; });
+}, {passive:true});
+</script>
+</body>
+</html>
